@@ -1,0 +1,49 @@
+/* 📁 src/components/home/HowItWorks.css */
+
+.how-it-works-section {
+  background-color: #ffffff;
+}
+
+.section-title-head {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  /* color: var(--secondColorDark); */
+  color: var(--secondColorDark) !important;
+}
+
+.how-card {
+  background-color:var(--secondColorLight);
+  border-radius: 100px;
+  border: solid 1px var(--mainColor);
+  box-shadow: 0 8px 20px rgba(var(--mainColorRgb), 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.how-card:hover {
+  transform: translateY(-6px);
+  border: solid 1px var(--secondColorDark);
+  box-shadow: 0 12px 24px rgba(var(--mainColorRgb), 0.15);
+}
+.how-card img{
+  height: 80px;
+  width: 80px;
+}
+.how-icon {
+  font-size: 2.8rem;
+  color: var(--mainColor);
+  margin-bottom: 10px;
+}
+
+.how-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-color-dark);
+}
+
+.how-desc {
+  font-size: 1rem;
+  color: #555;
+}

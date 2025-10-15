@@ -1,0 +1,56 @@
+/* 📁 src/components/home/WhatWeOffer.css */
+
+.offer-section {
+  background-color: #fff;
+}
+
+.offer-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--secondColorDark) !important;
+}
+
+/* كروت العروض */
+.offer-section .offer-card {
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: solid 5px var(--secondColorDark);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.offer-section .offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 15px var(--secondColorDark);
+  border: none;
+}
+
+/* الأيقونة */
+.offer-icon {
+  font-size: 3rem;
+  color: var(--mainColor);
+}
+
+/* العنوان الفرعي */
+.offer-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-color-dark);
+}
+
+/* الوصف */
+.offer-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.offer-card img{
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+
+}

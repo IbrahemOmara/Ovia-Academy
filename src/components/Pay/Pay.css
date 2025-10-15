@@ -1,0 +1,16 @@
+#pay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#pay h1 {
+    font-size: clamp(1rem,5vw,3.2rem);
+}
+
+.btn-pay,
+.btn-pay:hover  {
+    background-image:linear-gradient(to left,rgba(255,255,255,1),var(--secondColor));
+    color: #000000 !important;
+}

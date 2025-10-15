@@ -1,0 +1,75 @@
+/* خلفية القسم */
+.content-course {
+  background-color: #eaf0d9 !important;
+  color: var(--text-color-light);
+  padding-top: 100px;
+}
+
+/* عنوان القسم */
+.content-courses h2 {
+  font-weight: 800;
+  color: var(--mainColor);
+}
+
+/* كروت الكورسات */
+.course-card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--bg-light-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* صورة الكورس */
+.course-card img {
+  border-radius: 12px;
+  height: 120px !important;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* تفاصيل الكورس عند الفتح */
+.course-details {
+  background-color: var(--btnBgColor) !;
+  color: var(--text-color-dark);
+  border-radius: 20px;
+}
+
+/* الدرس داخل تفاصيل الكورس */
+.course-details .card {
+  background-color: #fff;
+  border-left: 5px solid var(--secondColor);
+  border-radius: 12px;
+}
+
+/* السعر داخل الكارد */
+.course-card .fw-bold {
+  color: var(--mainColor);
+}
+
+/* النصوص المختصرة */
+.course-card .text-muted {
+  font-size: 0.9rem;
+}
+
+/* الزر الرجوع */
+.selected-card .btn {
+  border-radius: 30px;
+}
+
+/* السبينر */
+.courses-spinner {
+  min-height: 300px;
+}
+
+/* Responsive tweaks */
+/* @media (max-width: 768px) {
+  .course-card img {
+    height: 150px;
+  }
+} */

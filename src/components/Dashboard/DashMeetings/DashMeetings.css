@@ -1,0 +1,16 @@
+
+.dash-Meetings .code-meeting .form-control {
+    color: #000000 !important;
+    box-shadow: 0 0 0 1px #000000 !important;
+}
+
+.dash-Meetings .code-meeting .form-control::placeholder {
+    color: #000000c5 !important;
+    font-weight: 600;
+}
+
+.toggle-screen {
+    position:absolute;;
+    bottom: 10px;
+    right: 10px;
+}

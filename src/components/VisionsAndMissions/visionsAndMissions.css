@@ -1,0 +1,26 @@
+#visionsAndMissions {
+    padding: 70px 0;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,0.05),rgba(var(--secondColorRgb),0.05),rgba(0, 0, 0, 0.9));
+
+}
+
+.mt-50 {
+    margin-top: calc(272px/2);
+}
+
+.middle-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+@media (max-width:768px) {
+    .mt-50 {
+        margin-top: 30px;
+    }
+}

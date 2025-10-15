@@ -1,0 +1,45 @@
+.content-section {
+  padding-top: 100px;
+}
+.contact-section h2 {
+  color: #0d6efd !important;
+}
+.contact-section {
+  background-color: #f9f9f9;
+}
+
+.contact-info {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h5 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+form label {
+  font-weight: 600;
+  color: #333;
+}
+
+form .form-control {
+  border-radius: 8px;
+}
+
+form button {
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 10px 0;
+  color: #fff !important;
+  background-color: #0d6efd !important;
+}

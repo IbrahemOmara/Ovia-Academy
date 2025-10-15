@@ -1,0 +1,39 @@
+
+
+.select-piont {
+    background-color: transparent !important;
+    color: #ffffff;
+    box-shadow: none;
+    /* accent-color: #ffffff; */
+}
+
+.select-piont:focus {
+    box-shadow: none;
+    border-color:#ffffff ;
+}
+
+.show-code {
+    height: 45px;
+}
+
+.show-history-piont th {
+    background-color: var(--mainColor-2);
+    color: #000000;
+    font-family: 'Almarai-Bold';
+}
+
+select option {
+    display: block;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.show-tokens .nav-link {
+    font-family: 'Almarai-Bold';
+    border: 0;
+}
+
+.show-tokens .nav-link.active {
+    background-color: transparent;
+    border-bottom: 3px solid var(--mainColor);
+}

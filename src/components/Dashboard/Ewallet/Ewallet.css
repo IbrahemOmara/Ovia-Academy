@@ -1,0 +1,100 @@
+.container-pop-up-bank {
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    left: 0;
+    top: -10%;
+    background-color: #ffffff9c;
+    z-index: 999999;
+}
+.popUp-bank {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 50%;
+    height: max-content;
+    background-color: var(--bg-main-color);
+    box-shadow: 0 0 20px 0;
+    z-index: 9999999;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    /* display: none; */
+}
+
+.e-wallet .card-data {
+    background-color: #fff;
+    padding: 5px ;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.e-wallet .card-data::before,
+.e-wallet .card-data2::before,
+.e-wallet .card-data3::before,
+.e-wallet .card-data4::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background-color: #00B3FF;
+}
+
+.e-wallet .card-data2::before {
+    background-color: #2DD683;
+}
+
+.e-wallet .card-data3::before {
+    background-color: #FED142;
+}
+
+.e-wallet .card-data4::before {
+    background-color: #FA8B3A;
+}
+ 
+.e-wallet .card-data label,
+.e-wallet .card-data p {
+    margin-left:30px ;
+    font-size: 0.9rem;
+    font-weight: bolder;
+}
+
+.e-wallet .card-data label {
+    font-size:  1rem;
+    color: var(--bg-main-color);
+}
+
+.e-wallet table td {
+    color: #00000098;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width:768px) {
+    .popUp-bank {
+        width: 75%;
+    }
+}
+
+@media (max-width:576px) {
+    .popUp-bank {
+        width: 85%;
+        padding: 10px 30px;
+    }
+}

@@ -1,0 +1,144 @@
+
+.bg {
+    width: 90%;
+}
+
+#why {
+    background-image: linear-gradient(to top,rgba(255,255,255,0.05),rgba(var(--secondColorRgb),0.05),#223f4a8e);
+    margin:200px 0 0 0;
+    overflow-x: hidden;
+}
+
+.animation-why {
+    position: absolute;
+    width:clamp(105px,5vw,105px);
+    height:105px;
+    top: 0;
+    transform: translateY(-45%);
+    right: 20%;
+    -webkit-transform: translateY(-45%);
+    -moz-transform: translateY(-45%);
+    -ms-transform: translateY(-45%);
+    -o-transform: translateY(-45%);
+}
+
+.whySel-buy {
+    animation:ts-left-right 3s  ease-in-out infinite ;
+    -webkit-animation:ts-left-right 3s  ease-in-out infinite ;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+.div-bitcoin {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: -1;
+}
+
+.img-bitcoin {
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+/* .animation-why img {
+    
+} */
+
+/* ts-left-right */
+@keyframes ts-left-right {
+    0%{
+        transform:rotateZ(0);
+        -webkit-transform:rotateZ(0);
+        -moz-transform:rotateZ(0);
+        -ms-transform:rotateZ(0);
+        -o-transform:rotateZ(0);
+}
+35%{
+    transform: rotateZ(30deg);
+    -webkit-transform: rotateZ(30deg);
+    -moz-transform: rotateZ(30deg);
+    -ms-transform: rotateZ(30deg);
+    -o-transform: rotateZ(30deg);
+}
+70%{
+    transform: rotateZ(-60deg);
+    -webkit-transform: rotateZ(-60deg);
+    -moz-transform: rotateZ(-60deg);
+    -ms-transform: rotateZ(-60deg);
+    -o-transform: rotateZ(-60deg);
+}
+100%{
+    transform: rotateZ(0);
+    -webkit-transform: rotateZ(0);
+    -moz-transform: rotateZ(0);
+    -ms-transform: rotateZ(0);
+    -o-transform: rotateZ(0);
+}
+
+}
+
+.ts-left-right {
+    animation: ts-left-right 3s infinite;
+    -webkit-animation: ts-left-right 3s infinite;
+}
+
+/* hide */
+@keyframes ts-scale-hide {
+    0%{
+        scale:  1;
+    }
+    25%{
+        scale: 0.5;
+    }
+    100%{
+        scale: 1;
+    }
+    
+}
+
+.ts-scale-hide {
+    animation:ts-scale-hide 2s infinite;
+    -webkit-animation:ts-scale-hide 2s infinite;
+}
+
+
+/* opacity */
+@keyframes ts-opacity-hide {
+    0%{
+        opacity:  1;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+.ts-opacity-hide {
+    animation:ts-opacity-hide 4s infinite;
+    -webkit-animation:ts-opacity-hide 4s infinite;
+}
+
+
+@media (max-width:576px) {
+
+    .bg {
+        width: 100%;
+    }
+
+    .animation-why {
+        right:0%
+    }
+}

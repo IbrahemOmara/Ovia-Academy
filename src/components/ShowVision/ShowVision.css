@@ -1,0 +1,52 @@
+.content-vision {
+    position: relative;
+    padding: 40px;
+}
+
+.vision-text p {
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+.img-border {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+}
+
+.circle-vision {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.arrow-vision, .img-arrow  {
+    position: absolute;
+    width: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.img-arrow {
+    left:300%;
+    width: 70px;
+    height: 10px;
+}
+
+@media (max-width:991.8px) {
+    .img-arrow {
+        width: 50px;
+        height: 10px;
+        left: 200%;
+    }
+}

@@ -1,0 +1,12 @@
+
+
+.arrow-mission {
+    left:-200% ;
+}
+
+@media (max-width:991.8px) {
+    .arrow-mission {
+        height: 10px;
+        left: -100%;
+    }
+}

@@ -1,0 +1,36 @@
+.cta-section.bg-root {
+  background-color: #e7f1ff !important;
+  color: black !important;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--secondColor);
+}
+
+.cta-subtitle {
+  font-size: 1.25rem;
+  color: var(--bg-main-color);
+  font-weight: 600;
+}
+
+.text-main {
+  color: var(--secondColorDark);
+  font-weight: bold;
+}
+
+.cta-section button {
+  background-color: var(--secondColor) !important;
+  color: var(--text-color-light);
+  border: none;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+}
+
+.cta-section button:hover {
+  /* background-color: var(--bg-main-color); */
+  transform: scale(1.05);
+}

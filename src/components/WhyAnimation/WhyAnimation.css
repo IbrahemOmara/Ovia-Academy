@@ -1,0 +1,90 @@
+
+.circle-why {
+    height: 263px;
+    width: clamp(100px,50vw,263px);
+    background-image: url('../../assets/images/whyCircle.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.icon-why .icon {
+    width: clamp(100px,30vw,200px);
+    height: 250px;
+}
+
+.icon-why .icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+} 
+
+.circle-why::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: -40%;
+    width: 55px;
+    height: 55px;
+    background-image: url('../../assets/images/Small-circle2.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+@keyframes ts-scale-why {
+    0% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+}
+25% {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+    50% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+}
+
+    100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+}
+}
+
+.ts-scale-why {
+    animation:  ts-scale-why 2s ease-in-out infinite;
+    -webkit-animation:  ts-scale-why 2s ease-in-out infinite;
+}
+
+@media (max-width: 767px) {
+    .circle-why {
+        height: 200px;
+    }
+}
+
+@media (max-width: 567px) {
+    .circle-why {
+        height: 150px;
+    }
+}

@@ -1,0 +1,10 @@
+.content-area-cards {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    box-shadow: 0 0 15px 0 #000000;
+}

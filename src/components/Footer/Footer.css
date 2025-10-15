@@ -1,0 +1,73 @@
+.contact {
+  background-color: var(--secondColorDark);
+  color: var(--text-color-light);
+  padding: 60px 0;
+}
+
+.contact .logo img {
+  max-width: 180px;
+}
+
+.links-social i {
+  font-size: 1.4rem;
+  color: var(--mainColor);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.links-social i:hover {
+  color: var(--secondColor);
+  transform: scale(1.2);
+}
+
+.our-services h3 {
+  color: var(--mainColor);
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.our-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.our-services ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+}
+
+.our-services ul li:hover {
+  color: #b8ec0b !important;
+}
+
+.contact a {
+  color: var(--text-color-light);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: var(--text-color-light);
+}
+
+.contact .row > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-height: 100%;
+}
+
+@media (max-width: 767px) {
+  .contact .row > div {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .our-services {
+    padding-top: 20px;
+  }
+}

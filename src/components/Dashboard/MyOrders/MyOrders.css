@@ -1,0 +1,9 @@
+.my-orders .table {
+    --bs-table-color: #000000 !important;
+    --bs-table-bg: #ffffff !important;
+    --bs-table-accent-bg: transparent;
+  }
+
+  .my-orders .table th {
+    background-color: #FCFDFD;
+  }

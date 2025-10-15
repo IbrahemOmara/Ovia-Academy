@@ -1,0 +1,17 @@
+.progress-circle {
+  display: block;
+}
+
+.progress-circle-background {
+  fill: none;
+  stroke: #ccc; /* Circle background color */
+  stroke-width: 15; /* Circle thickness */
+}
+
+.progress-circle-progress {
+  fill: none;
+  stroke: var(--mainColor); /* Progress color */
+  stroke-width: 15; /* Circle thickness */
+  stroke-linecap: round; /* Rounded line ends */
+  transition: stroke-dashoffset 0.3s ease-in-out; /* Smooth transition animation */
+}

@@ -1,0 +1,226 @@
+/* =============================
+  Fonts
+============================= */
+@font-face {
+  font-family: "Almarai-Light";
+  src: url("./fonts/Almarai/Almarai-Light.ttf");
+}
+
+@font-face {
+  font-family: "Almarai-Bold";
+  src: url("./fonts/Almarai/Almarai-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Almarai-ExtraBold";
+  src: url("./fonts/Almarai/Almarai-ExtraBold.ttf");
+}
+
+/* ------------------- */
+:root {
+  --mainColor: #e7b621;
+  --mainColorRgb: 211, 148, 44;
+  --mainColorLight: #182e12;
+  --btnBgColor: #182e12;
+  /* Secondary (أزرق) */
+  --secondColor: #FF3F7F;
+  --secondColorDark: #450693;
+  --secondColorLight: #eee0ffa0;
+  --secondColorRgb: 61, 139, 253;
+
+  /* Backgrounds */
+  --bg-main-color: #e7b621;
+  --bg-light-color: #fcdde7be;
+
+  /* Texts */
+  --text-color-dark: #212529;
+  --text-color-light: #eaf0d9;
+}
+
+html,
+body {
+  width: 100%;
+
+  height: 100%;
+  font-family: "Almarai-Light";
+  background-color: var(--bg-main-color);
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: var(--font-family);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-main-2 {
+  color: var(--mainColor-2);
+}
+
+.text-main-3 {
+  color: var(--bg-main-color);
+}
+
+.bg-main-color {
+  background-color: var(--bg-main-color) !important;
+}
+
+.bg-main-color-2 {
+  background-color: var(--mainColor-2) !important;
+  color: var(--bg-main-color) !important;
+  font-family: "Almarai-Bold";
+}
+
+.bg-main-color-3 {
+  background-color: var(--secondColor) !important;
+  color: #000000 !important;
+}
+
+.bg-grdient {
+  background-image: linear-gradient(
+    to left,
+    #d3942c,
+    var(--secondColor),
+    var(--secondColor)
+  );
+  color: #000000 !important;
+  font-family: "Almarai-Bold";
+}
+
+.fs-small {
+  font-size: 0.8rem !important;
+}
+
+.fs-middle {
+  font-size: 0.9rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.not-allowed {
+  cursor: not-allowed !important;
+}
+
+.my-fw-bold {
+  font-family: "Almarai-Bold";
+}
+
+.my-fw-bolder {
+  font-family: "Almarai-ExtraBold";
+}
+
+.h-max-content {
+  height: max-content;
+}
+
+.shadow-0 {
+  box-shadow: none !important;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+.my-shadow {
+  box-shadow: 0 0 10px 0 var(--mainColor-2);
+}
+
+.scroll-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.scroll-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.blur {
+  background-color: #0000;
+  backdrop-filter: blur(10px);
+}
+
+.shadow-light {
+  box-shadow: 0 0 7px 0 #ffffff;
+}
+
+input[type="date" i] {
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    -webkit-filter: invert(1);
+  }
+}
+
+input[type="time" i] {
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    -webkit-filter: invert(1);
+  }
+}
+
+.form-select {
+  background-color: transparent !important;
+  border: 1px solid #ffffffa1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23ffffff' d='M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8l316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496'/%3E%3C/svg%3E") !important;
+  color: #ffffff;
+}
+
+.form-select-1 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff' d='M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569z'/%3E%3C/svg%3E") !important;
+}
+
+.form-select:focus {
+  box-shadow: none;
+}
+
+.form-select option {
+  display: block;
+  background-color: var(--bg-main-color) !important;
+  padding: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mainColor);
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: var(--mainColor) !important;
+  color: var(--bg-main-color) !important;
+  font-family: "Almarai-Bold";
+}
+.nav-item a:hover {
+  color: #ffff;
+}
+
+.text-sin {
+  color: var(--text-color-light);
+}
+.text-title {
+  color: var(--secondColor);
+}
+/* .btn-sin {
+  color: var(--text-color-dark);
+} */

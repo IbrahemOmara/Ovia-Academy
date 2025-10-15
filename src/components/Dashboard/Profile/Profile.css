@@ -1,0 +1,111 @@
+.my-profile .box-prof {
+  padding: 20px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 7px 0 #fff;
+  /* height: 530px; */
+  position: relative;
+}
+
+.box-prof .border-img,
+.box-prof .img-pro {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.box-prof .img-pro {
+  top: 20.5%;
+}
+
+.my-profile .desc-profile label,
+.my-profile .desc-profile span {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.my-profile .desc-profile span {
+  color: #0000008c;
+  margin-left: 50px;
+}
+
+.navs-prof .nav-link {
+    color:#000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+}
+
+.navs-prof .nav-link.active {
+    border: 0;
+    color: #000 !important;
+    border-bottom: 3px solid var(--mainColor);
+}
+
+progress[value] {
+  --color: linear-gradient(var(--mainColor) 0 0);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: transparent;
+  -webkit-mask: radial-gradient(#0000 59%, #000 60% 68%, #0000 81%);
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+progress[value]::-webkit-progress-bar {
+  background: transparent;
+}
+progress[value]::-webkit-progress-value {
+  background: var(--color);
+}
+progress[value]::-moz-progress-bar {
+  background: var(--color);
+}
+
+.progress-t label {
+  --w: 150px; 
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-grid;
+  place-content: center;
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  font-size: 0.8rem;
+}
+
+.my-profile .progressCi {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.my-profile .edit-img-prof {
+  position: absolute;
+  bottom: -7px;
+  left: 56%;
+  font-size: 1.3rem;
+}

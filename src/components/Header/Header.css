@@ -1,0 +1,38 @@
+#header {
+    /* height: 95vh; */
+    position: relative;
+    margin-top: 120px;
+}
+
+.bg-header {
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    bottom: 15%;
+    left: 0;
+    background-image: url('../../assets/images/BG.png');
+    background-position:center;
+    background-size: contain;
+    z-index: -1;
+}
+
+#header .slick-list {
+    padding: 20px 0 50px 0;
+}
+
+@media (max-width: 992px) {
+
+    .bg-header {
+        width: 45%;
+        height: 85%;
+        bottom: 25%;
+        left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .bg-header {
+        height: 75%;
+    }
+}
