@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SignUp.css";
 import logo from "../../assets/Ovia-logo/Ovia.png";
-import bg from "../../assets/images/sign-up/bgSingUp.png";
+import bg from "../../assets/Ovia-logo/bg-ovia.png";
 import { Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -154,17 +154,17 @@ export default function SignUp() {
           <img src={bg} className="w-100 h-100 object-fit-fill" />
         </div>
         <div className="container">
-          <div className="bg-form">
+          <div className="bg-form sign-up-content">
             <div className="ms-2 header-form text-center">
-              <div className="row ">
-                <div className="col-md-5 p-0">
+              <div className="row d-flex ">
+                <div className="col-md-5 p-0 w-100 mb-3">
                   <Link to="/">
                     <div className="logo">
                       <img className="w-100 h-100 " src={logo} />
                     </div>
                   </Link>
                 </div>
-                <div className="col-md-7">
+                <div className="col-md-7 w-100">
                   <h3 className="m-0 fw-bolder mt-2 text-center text-md-start text-sin ">
                     Welcome
                   </h3>
@@ -175,15 +175,15 @@ export default function SignUp() {
               aria-disabled
               onSubmit={register.handleSubmit}
               onChange={register.handleChange}
-              className="mt-4"
+              className="mt-4 w-100"
             >
               <div className="row justify-content-around ">
-                <div className="col-md-5 ">
+                <div className="col-md-6 ">
                   <div className="mb-3 text-start">
                     <label htmlFor="sponsorId" className="form-label ">
                       Sponsor ID
                     </label>
-                    <div className="sponser d-flex gap-4">
+                    <div className="sponser d-flex gap-2 ">
                       <input
                         onKeyUp={toggleSponsorId}
                         onChange={register.handleChange}
@@ -215,7 +215,7 @@ export default function SignUp() {
                     </div>
                   </div>
                 </div>
-                <div className={`${disabled} col-md-4 pe-4`}>
+                <div className={`${disabled} col-md-5 pe-4`}>
                   <div className="mb-3 text-start">
                     <label htmlFor="sponsorName" className="form-label">
                       Your Sponser Name{" "}
@@ -233,7 +233,7 @@ export default function SignUp() {
                 </div>
               </div>
               <div className="row justify-content-around">
-                <div className={`${disabled} col-md-4 pe-4 offset-md-0`}>
+                <div className={`${disabled} col-md-5 pe-4 offset-md-0`}>
                   <div className="mb-3 text-start">
                     <label htmlFor="email" className="form-label">
                       Email
@@ -252,7 +252,7 @@ export default function SignUp() {
                     ) : null}
                   </div>
                 </div>
-                <div className={`${disabled} col-md-4 offset-md-1 pe-4`}>
+                <div className={`${disabled} col-md-5 offset-md-1 pe-4`}>
                   <div className="mb-3 text-start">
                     <label htmlFor="phoneNumber" className="form-label">
                       Phone Number
@@ -274,7 +274,7 @@ export default function SignUp() {
                 </div>
               </div>
               <div className="row justify-content-around">
-                <div className={`${disabled} col-md-4 pe-4 offset-md-0`}>
+                <div className={`${disabled} col-md-5 pe-4 offset-md-0`}>
                   <div className="mb-3 text-start">
                     <label htmlFor="fName" className="form-label">
                       First Name{" "}
@@ -293,7 +293,7 @@ export default function SignUp() {
                     ) : null}
                   </div>
                 </div>
-                <div className={`${disabled} col-md-4 offset-md-1 pe-4`}>
+                <div className={`${disabled} col-md-5 offset-md-1 pe-4`}>
                   <div className="mb-3 text-start">
                     <label htmlFor="lName" className="form-label">
                       Last Name{" "}
@@ -314,7 +314,7 @@ export default function SignUp() {
                 </div>
               </div>
               <div className="row justify-content-around">
-                <div className={`${disabled} col-md-4  pe-4 offset-md-0`}>
+                <div className={`${disabled} col-md-5  pe-4 offset-md-0`}>
                   <div className="mb-3 text-start">
                     <label htmlFor="countryId" className="form-label">
                       Your Country
@@ -339,7 +339,7 @@ export default function SignUp() {
                     </select>
                   </div>
                 </div>
-                <div className={`${disabled} col-md-4 offset-md-1 pe-4`}>
+                <div className={`${disabled} col-md-5 offset-md-1 pe-4`}>
                   <div className="mb-3 text-start">
                     <label htmlFor="nationalId" className="form-label">
                       National ID
@@ -380,14 +380,14 @@ export default function SignUp() {
                 </div>
               </div>
             </form>
-            <div className="row mt-4 justify-content-center">
-              <div className="col-7 col-md-8 p-0">
-                <p className="m-0 mt-2 text-end fs-small">
+            <div className="row mt-4 justify-content-center w-100 ">
+              <div className="col-12 col-md-5 p-0">
+                <p className="m-0 mt-2 text-center fs-small">
                   If you have account, Please Sign in.
                 </p>
               </div>
-              <div className="col-6 col-md-4">
-                <Link className="btn btn-sign-up" to="/sign-in">
+              <div className="col-12 col-md-4">
+                <Link className="btn btn-sign-up not-active" to="/sign-in">
                   Sign in
                 </Link>
               </div>

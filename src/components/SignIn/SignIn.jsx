@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import bg from "../../assets/images/sign-up/bgSingUp.png";
+import bg from "../../assets/Ovia-logo/bg-ovia.png";
 import "../SignUp/SignUp.css";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/Ovia-logo/Ovia.png";
 import { useFormik } from "formik";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -79,24 +79,24 @@ export default function SignIn() {
         <div className="bg-sign-up">
           <img src={bg} className="w-100 h-100 object-fit-fill" />
         </div>
-        <div className="container my-5">
-          <div className="bg-form p-4">
-            <div className="header-form me-3">
+        <div className="container my-5" >
+          <div className="bg-form p-4" >
+            <div className="header-form  w-100">
               <Link to="/">
-                <div className="logo ms-auto">
+                <div className="logo ms-auto" >
                   <img className="w-100 h-100 " src={logo} alt="" srcSet="" />
                 </div>
               </Link>
             </div>
-            <div className="row mx-1 mt-4">
-              <div className="col-md-6 col-lg-5 pe-3">
-                <form onSubmit={login.handleSubmit} className="">
-                  <p className="fs-3 fw-bold text-title">
+            <div className="row mx-1 mt-4 div-in">
+              <div className="col-md-12 col-lg-12 pe-3">
+                <form onSubmit={login.handleSubmit} className="login-form">
+                  <p className="fs-3 fw-bold text-title" style={{color:"#ffff"}}>
                     Get Your Success, Learn, Earn, Acquire
                   </p>
-                  <h2 className="fw-bolder text-sin ">Welcome Back</h2>
-                  <div className="row mt-4 flex-column">
-                    <div className="col-md-10">
+                  <h2 className="fw-bolder text-sin " style={{color:"#ffff"}}>Welcome Back</h2>
+                  <div className="row mt-4 flex-column-1">
+                    <div className="col-12">
                       <div className="mb-3">
                         <label htmlFor="email" className="form-label">
                           Email
@@ -115,7 +115,7 @@ export default function SignIn() {
                         ) : null}
                       </div>
                     </div>
-                    <div className="col-md-10">
+                    <div className="col-md-12">
                       <div className="mb-1">
                         <label htmlFor="password" className="form-label">
                           Password
@@ -177,7 +177,7 @@ export default function SignIn() {
                         className="btn btn-sign-up "
                       >
                         {btnLoading ? (
-                          <BtnLoading color={"#B8EC0B"} />
+                          <BtnLoading color={"#f5e5c7"} />
                         ) : (
                           "Sign In"
                         )}
@@ -189,30 +189,22 @@ export default function SignIn() {
                         role="alert"
                       >
                         {invalid}
+                        Password or email is wrong
                       </div>
                     </div>
                   </div>
                 </form>
               </div>
-              <div className="col-md-6 col-lg-7 d-none d-md-block">
-                <div className="img-sign-in">
-                  <img
-                    className="w-100 h-100 object-fit-fill"
-                    src={bg}
-                    alt=""
-                    srcSet=""
-                  />
-                </div>
-              </div>
+              
             </div>
-            <div className="row mt-4 justify-content-center">
-              <div className="col-7 col-md-8 p-0">
-                <p className="m-0 mt-2 text-end fs-small">
+            <div className="row w-100 mt-4 justify-content-center">
+              <div className="col-12 col-md-4 p-0">
+                <p className="m-0 mt-2 text-center fs-small">
                   If you have no account, Please Sign Up.
                 </p>
               </div>
-              <div className="col-6 col-md-4">
-                <Link className="btn btn-sign-up btn-sin" to="/sign-up">
+              <div className="col-12 col-md-4">
+                <Link className="btn btn-sign-up btn-sin not-active" to="/sign-up">
                   Sign Up
                 </Link>
               </div>

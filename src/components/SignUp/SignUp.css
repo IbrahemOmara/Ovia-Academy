@@ -1,5 +1,5 @@
 .sign-up {
-  padding: 50px 30px;
+  padding: 50px 200px;
 }
 
 .bg-sign-up {
@@ -7,19 +7,18 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   z-index: -1;
   background-color: #0000 !important;
 }
 
+.sign-up-content .header-form .row{
+  flex-direction: column;
+}
+
 .bg-form {
-  box-shadow: 0 0 10px 0 #ffffff !important;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 10),
-    rgba(0, 0, 0, 10),
-    rgba(0, 0, 0, 10)
-  );
+  background: rgba(71, 71, 71, 0.15); /* طبقة شفافة */
+  backdrop-filter: blur(6px); /* 💎 البلور الحقيقي */
+  box-shadow: 0 0 10px 0 var(--secondColor) !important;
   color: #ffffff;
   padding: 30px;
   border-radius: 10px;
@@ -27,6 +26,9 @@
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sign-up form label {
@@ -37,9 +39,9 @@
 
 .form-control {
   background-color: transparent !important;
-  box-shadow: 0 0 0 1px #ffffffc7 !important;
-  color: #ffffff !important;
-  border: none;
+  box-shadow: 0 0 0 1px var(--secondColor) !important;
+  color: var(--secondColor) !important;
+  border:solid 1px  var(--secondColor);
 }
 
 .form-control:focus {
@@ -66,25 +68,32 @@
 
 .btn-sign-up {
   color: #000000 !important;
-  background-color: #dbf683 !important;
+  background-color: var(--secondColor) !important;
   font-family: "Almarai-Bold";
   width: 100%;
   height: 40px;
 }
+.not-active{
+  background-color: var(--secondColorDark) !important;
+    color: var(--secondColor) !important;
+    font-weight: bold;
+    border: solid 2px var(--secondColor);
+}
 
 .btn-sign-up:hover {
   box-shadow: 0 0 0 2px #ffffff !important;
-  color: #b8ec0b !important;
+  color: #ffffff !important;
+  background-color:var(--mainColor) !important;
 }
 
 .btn-search {
-  background-color: var(--secondColor);
+  background-color: var(--secondColor)!important;
   color: #000000 !important;
   font-family: "Almarai-Bold";
-  background-color: var(--secondColor) !important;
 }
 .btn-search:hover {
   color: white !important;
+  background-color: #f7ba49 !important;
 }
 .alert-input {
   height: 10px;
@@ -104,8 +113,51 @@
   box-shadow: 0 0 10px 0;
 }
 
+.header-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.div-in{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
 @media (max-width: 1600px) {
   .sign-up {
     position: relative;
   }
+  .sign-up {
+  padding: 30px 200px;
 }
+
+}
+
+
+@media (max-width: 1024px) {
+  .sign-up {
+    position: relative;
+  }
+  .sign-up {
+  padding: 30px 10px;
+}
+.bg-sign-up {
+  height: 100%;
+}
+}
+@media (max-width: 400px) {
+.sponser{
+  flex-wrap: wrap;
+}
+}
+

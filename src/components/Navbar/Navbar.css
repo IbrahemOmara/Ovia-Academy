@@ -1,5 +1,5 @@
 nav {
-  background-color: #ffffff;
+  background-color: var(--secondColorDark);
   border-bottom:solid 2px  #FFC400 !important;
   border-bottom-left-radius:30px ;
   border-bottom-right-radius: 30px;
@@ -32,11 +32,11 @@ nav {
 }
 
 .nav-link:hover {
-  color: var(--secondColor) !important;
+  color: var(--secondColorLight) !important;
 }
 
 .nav-link.active {
-  color: var(--secondColor) !important;
+  color: var(--secondColorLight) !important;
 }
 
 .text-sin{
@@ -73,7 +73,8 @@ nav {
 }
 
 .btn-signIn {
-  box-shadow: 0 0 0 1px #ffffff;
+  box-shadow: 0 0 0 1px var(--secondColorDark);
+  border: none;
 }
 
 .btn-signIn:hover {
@@ -91,7 +92,7 @@ nav {
 .btn-signUp {
   color: var(--secondColor) !important;
   font-weight: bold;
-  border: dashed 1px #FF3F7F;
+  border: dashed 1px var(--secondColor);
 }
 
 .btn-signUp:hover {
