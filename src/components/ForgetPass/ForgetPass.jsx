@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
-import logo from '../../assets/images/logo.png';
-import bg from '../../assets/images/sign-up/bgSingUp.png';
+import logo from '../../assets/Ovia-logo/Ovia.png';
+import bg from '../../assets/Ovia-logo/bg-ovia.png';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -50,30 +50,30 @@ export default function ForgetPass() {
                             </div>
                         </Link>
                     </div>
-                    <div className="row mt-3">
+                    <div className="row mt-3 ">
                         <div className="col-md-7">
                             <h2 className='text-main-2 fw-bold'>Forgot Password?</h2>
-                            <p className='w-75'>Enter your email address below and we will send you instructions to reset your password.</p>
+                            <p className='w-80'>Enter your email address below and we will send you instructions to reset your password.</p>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-6">
+                    <div className="row w-100 justify-content-center">
+                        <div className="col-md-5">
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email</label>
                                 <input onChange={forgetPass.handleChange} name='email' type="email" className="form-control" id="email" />
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-6">
+                    <div className="row w-100 justify-content-center">
+                        <div className="col-md-5">
                             <div className="mb-3">
                                 <button type='submit' className='btn w-100 btn-sign-up'>Send Reset Link</button>
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-6">
-                            <Link className="btn w-100 text-white btn-signIn h-auto " to='/sign-in'>Back to login</Link>   
+                    <div className="row w-100 justify-content-center">
+                        <div className="col-md-4">
+                            <Link className="btn w-100 text-white  not-active h-auto " to='/sign-in'>Back to login</Link>   
                         </div>
                     </div>
                 </div>

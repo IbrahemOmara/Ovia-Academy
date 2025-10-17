@@ -42,10 +42,10 @@ const Contact = () => {
             </Col>
 
             <Col md={6}>
-              <div className="contact-info">
+              <div className=" contact-info ">
                 <h5 className="my-fw-bold text-main-2 mb-3">Get in Touch</h5>
                 <p>
-                  <strong>Email:</strong> support@Rawad.V
+                  <strong>Email:</strong> support@Ovia
                 </p>
                 <p>
                   <strong>Phone:</strong> +20 123 456 789

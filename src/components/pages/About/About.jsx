@@ -91,7 +91,7 @@ export default function About() {
             >
               Empowering Your Professional Future
             </motion.h1>
-            <p className="lead">Discover the Power of Education with Ruwad V</p>
+            <p className="lead">Discover the Power of Education with Ovia Academy</p>
           </Container>
         </section>
 
@@ -100,7 +100,7 @@ export default function About() {
           <Container>
             <Row className="mb-4">
               <Col>
-                <h2 className="text-center fw-bold">About Ruwad V</h2>
+                <h2 className="text-center fw-bold">About Ovia </h2>
                 <p className="text-muted text-center mx-auto w-75">
                   Ruwad V Academy is your go-to E-Learning hub for everything
                   related to online business. We train freelancers and empower
@@ -110,7 +110,7 @@ export default function About() {
             </Row>
 
             {/* Vision & Mission */}
-            <Row>
+            <Row >
               {[
                 {
                   title: "Our Vision",
