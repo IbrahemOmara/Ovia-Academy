@@ -59,14 +59,14 @@ const RecursiveTreeView = ({ data , dataUser }) => {
         minHeight: 270,
         flexGrow: 1,
         maxWidth: 300,
-        color: "#ffffff",
+        color: "#23211a",
       }}
     >
-     <CustomTreeItem
+    <CustomTreeItem
       itemId={dataUser.customerAttributeId}
       label={dataUser.name}
     >
-     {data.map((item) => (
+    {data.map((item) => (
         <RecursiveTreeItem key={item.customerAttributeId} item={item} />
       ))}
     </CustomTreeItem>

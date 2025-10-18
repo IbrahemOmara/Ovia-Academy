@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./SideBar.css";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../../assets/Ovia-logo/Ovia.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../../context/storeContext";
 
@@ -354,7 +354,7 @@ export default function SideBar({ toggleSidebar }) {
                   </g>
                 </svg>
                 <span onClick={handleClick} className=" d-md-block">
-                  Ruwad University
+                  Ovia University
                 </span>
               </NavLink>
             </li>

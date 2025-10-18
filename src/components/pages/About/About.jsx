@@ -63,7 +63,7 @@ export default function About() {
     {
       name: "Omar Ali",
       feedback:
-        "Ruwad V changed my career! The marketing course helped me land my first freelance job.",
+        "Ovia changed my career! The marketing course helped me land my first freelance job.",
     },
     {
       name: "Nour El-Din",
@@ -96,13 +96,13 @@ export default function About() {
         </section>
 
         {/* About */}
-        <section className="py-5">
+        <section className="py-5 about" style={{backgroundColor:"#ffff"}}>
           <Container>
             <Row className="mb-4">
               <Col>
                 <h2 className="text-center fw-bold">About Ovia </h2>
                 <p className="text-muted text-center mx-auto w-75">
-                  Ruwad V Academy is your go-to E-Learning hub for everything
+                  Ovia Academy is your go-to E-Learning hub for everything
                   related to online business. We train freelancers and empower
                   youth to market and sell effectively.
                 </p>
@@ -266,9 +266,9 @@ export default function About() {
                 </p>
               </Col>
             </Row>
-            <Row className="text-center">
+            <Row className="text-center ">
               {team.map((member, idx) => (
-                <Col md={6} lg={3} key={idx} className="mb-4">
+                <Col md={6} lg={3} key={idx} className="mb-4 team">
                   <Card className="shadow-sm team-card h-100">
                     <Card.Img
                       variant="top"

@@ -29,7 +29,7 @@
   --secondColorRgb: 61, 139, 253;
 
   /* Backgrounds */
-  --bg-main-color: #e7b621;
+  --bg-main-color: #fef8ede6;
   --bg-light-color: #fcdde7be;
 
   /* Texts */
@@ -55,6 +55,7 @@ body {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .text-main-2 {

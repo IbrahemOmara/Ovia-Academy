@@ -103,7 +103,7 @@ export default function DashMeetingsInAct() {
                   </div>
                 </div>
                 <div className="col-12 mt-4">
-                  <div className="w-100 py-4 px-3 bg-body rounded-3 shadow-light">
+                  <div className="w-100 py-4 px-3 bg-body rounded-3 shadow-light Y-border">
                     <h6 className="fw-bold">Join a Meeting</h6>
                     <div className="row align-items-center">
                       <div className="col-7">
@@ -141,7 +141,7 @@ export default function DashMeetingsInAct() {
                     className="d-flex align-items-center justify-content-center rounded-4 overflow-hidden shadow border"
                     style={{ height: "80vh" }}
                   >
-                    <h5 className="text-center text-white">No Meeting Now</h5>
+                    <h5 className="text-center">No Meeting Now</h5>
                   </div>
                 )}
               </div>

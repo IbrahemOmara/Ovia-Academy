@@ -145,7 +145,7 @@ export default function MyWallet() {
                 <div className="point-request">
                   <label
                     htmlFor="tokenValue"
-                    className="form-label text-white my-fw-bold"
+                    className="form-label  my-fw-bold"
                   >
                     Piont Request
                   </label>
@@ -183,8 +183,8 @@ export default function MyWallet() {
             </div>
             <div className="row mt-3">
               <div className="col-md-8">
-                <h6 className="fw-bold fs-5 text-white">Code</h6>
-                <div className="show-code border p-2 rounded-3 text-white-50 ">
+                <h6 className="fw-bold fs-5 ">Code</h6>
+                <div className="show-code border p-2 rounded-3 code  ">
                   {code}
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default function MyWallet() {
             >
               <li className="nav-item " role="presentation">
                 <button
-                  className="nav-link active btn p-0"
+                  className="nav-link active paid-btn btn p-0 "
                   id="unPaid-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#unPaid-tab-pane"
@@ -213,7 +213,7 @@ export default function MyWallet() {
               </li>
               <li className="nav-item" role="presentation">
                 <button
-                  className="nav-link btn p-0"
+                  className="nav-link btn p-0 paid-btn "
                   id="paid-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#paid-tab-pane"
@@ -234,7 +234,7 @@ export default function MyWallet() {
                 aria-labelledby="unPaid-tab"
                 tabIndex={0}
               >
-                <h6 className="my-fw-bold text-white">
+                <h6 className="my-fw-bold ">
                   Total Price : {totalPriceUnPaid || 0}
                 </h6>
                 <div className="table-responsive show-history-piont rounded-3 ">
@@ -276,7 +276,7 @@ export default function MyWallet() {
                           );
                         })
                       ) : (
-                        <tr className="text-center mt-3 text-white position-absolute start-50">
+                        <tr className="text-center mt-3  position-absolute start-50">
                           {tokens}
                         </tr>
                       )}
@@ -291,7 +291,7 @@ export default function MyWallet() {
                 aria-labelledby="paid-tab"
                 tabIndex={0}
               >
-                <h6 className="my-fw-bold text-white">
+                <h6 className="my-fw-bold ">
                   Total Price : {totalPricePaid || 0}
                 </h6>
                 <div className="table-responsive show-history-piont rounded-3 ">
@@ -337,7 +337,7 @@ export default function MyWallet() {
                           );
                         })
                       ) : (
-                        <tr className="text-center mt-3 text-white position-absolute start-50">
+                        <tr className="text-center mt-3  position-absolute start-50">
                           {tokens}
                         </tr>
                       )}

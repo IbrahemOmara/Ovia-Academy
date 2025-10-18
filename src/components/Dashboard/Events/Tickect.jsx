@@ -4,7 +4,7 @@ import { baseURL } from "../../../utils/baseURL";
 import { useQuery } from "react-query";
 import Loading from "../../Loading/Loading";
 import axios from "axios";
-import imgTicket from "../../../assets/images/events/ticket.png";
+import imgTicket from "../../../assets/cources/ai.jpeg";
 
 
 export default function Tickect() {

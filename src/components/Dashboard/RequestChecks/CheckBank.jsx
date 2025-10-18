@@ -1,6 +1,6 @@
 import React from 'react'
 import './RequestChecks.css'
-import logo from '../../../assets/images/logo.png'
+import logo from '../../../assets/Ovia-logo/Ovia.png'
 import imgBANKCHECK from '../../../assets/images/dashboard/BANK CHECK.png'
 import bgLogo from '../../../assets/images/dashboard/bgLogo.png'
 import signature  from '../../../assets/images/dashboard/signature.png'

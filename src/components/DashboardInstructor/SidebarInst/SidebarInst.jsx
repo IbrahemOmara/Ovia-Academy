@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../../Dashboard/SideBar/SideBar.css";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../../assets/Ovia-logo/Ovia.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../../context/storeContext";
 

@@ -1,4 +1,6 @@
-
+#sidebar{
+    background-color: var(--secondColorDark) ;
+}
 #sidebar .nav-item {
     padding: 0;
     margin-block: 5px;
@@ -45,7 +47,7 @@
 }
 
 #sidebar .active i {
-  color: var(--secondColor);
+    color: var(--secondColor);
 }
 
 .link-dashboard {
@@ -83,7 +85,7 @@
 .toggle-sidebar {
     position: fixed;
     left: 18%;
-    top:2.5%;
+    top:2%;
     transform: translateX(50%);
     -webkit-transform: translateX(50%);
     -moz-transform: translateX(50%);
@@ -95,8 +97,12 @@
     -moz-transition: left 0.3s;
     -ms-transition: left 0.3s;
     -o-transition: left 0.3s;
-    background-color: var(--bg-main-color);
+
     padding:0 5px;
+}
+
+.toggle-sidebar i{
+    color: var(--secondColorLight);
 }
 
 .translatex-x-101 {

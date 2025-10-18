@@ -11,7 +11,7 @@ import ShowMission from '../ShowMission/ShowMission';
 export default function VisionsAndMissions() {
 
   const visions = {
-    vision1:`Our vision at Ruwad for Education, Trading, and Marketing is to be a leading global 
+    vision1:`Our vision at Ovia for Education, Trading, and Marketing is to be a leading global 
               provider of comprehensive educational resources, advanced trading tools, and impactful 
               marketing solutions.`,
     vision2:`We aspire to create a community where individuals can learn, grow, and succeed together, 
@@ -22,7 +22,7 @@ export default function VisionsAndMissions() {
   }
 
   const missions = {
-    mission1:`At Ruwad for Education, Trading, and Marketing, 
+    mission1:`At Ovia for Education, Trading, and Marketing, 
               our mission is to empower individuals with the knowledge and skills they 
               need to excel in both the financial markets and the dynamicfjeld of marketing.`,
     mission2:`We are committed to providing high-quality education, innovative trading solutions,

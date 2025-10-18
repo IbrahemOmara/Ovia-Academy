@@ -58,7 +58,7 @@ export default function ReportToken() {
         Report Token
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle className="bg-main-color text-white">
+        <DialogTitle className="bg-main-color ">
           Report about token!
         </DialogTitle>
         <DialogContent
@@ -164,7 +164,7 @@ export default function ReportToken() {
           ))}
 
           <DialogActions className="bg-main-color mt-4 pt-3 border-top">
-            <Button className="text-white" onClick={handleClose}>
+            <Button className="" onClick={handleClose}>
               Cancel
             </Button>
           </DialogActions>

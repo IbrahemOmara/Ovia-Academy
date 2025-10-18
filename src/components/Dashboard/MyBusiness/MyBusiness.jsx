@@ -17,7 +17,7 @@ export default function MyBusiness() {
 
   return (
     <>
-      <section className='my-business text-center text-white'>
+      <section className='my-business text-center '>
         <h2>Business Sooooon</h2>
       </section>
     </>

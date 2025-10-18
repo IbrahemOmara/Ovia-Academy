@@ -1,10 +1,18 @@
 .content-area-cards {
-    background-color: #ffffff;
+    background-color: #fafafab0;
     padding: 20px 30px;
-    border-radius: 25px;
+    border-radius: 5px !important;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
-    box-shadow: 0 0 15px 0 #000000;
+    box-shadow: 0 0 3px 0 var(--secondColor);
+}
+
+.content-area-cards h4{
+    color: var(--secondColor);
+}
+.total{
+    color: var(--secondColor);
+    font-size: 1.5em;
 }

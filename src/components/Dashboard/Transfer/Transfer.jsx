@@ -48,7 +48,7 @@ export default function Transfer() {
                 <div className="form-group">
                   <label
                     htmlFor="senderBackOfficeId"
-                    className="form-label text-white my-fw-bold"
+                    className="form-label  my-fw-bold"
                   >
                     From Account
                   </label>
@@ -57,6 +57,7 @@ export default function Transfer() {
                     className="form-select form-select-1 "
                     name="senderBackOfficeId"
                     id="senderBackOfficeId"
+                    style={{color:"#1a8755", border:"solid 1px #1a8755"}}
                   >
                     <option value={dataUser?.referId} selected>
                       {dataUser?.referId}
@@ -70,7 +71,7 @@ export default function Transfer() {
                 <div className="form-group">
                   <label
                     htmlFor="recieverBackOfficeId"
-                    className="form-label text-white my-fw-bold"
+                    className="form-label  my-fw-bold"
                   >
                     To Account
                   </label>
@@ -90,7 +91,7 @@ export default function Transfer() {
                 <div className="form-group">
                   <label
                     htmlFor="amount"
-                    className="form-label text-white my-fw-bold"
+                    className="form-label  my-fw-bold"
                   >
                     Amount (must be equal to or more than $15)
                   </label>

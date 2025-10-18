@@ -83,11 +83,11 @@ export default function DashMeetings() {
               <div className="row gy-4 pt-1">
                 <div className="col-12">
                   <div className="upcoming-meeting py-4 px-3 bg-body rounded-3 shadow-light h-100">
-                    <h4 className="fw-bold text-center mb-5">
+                    <h4 className="fw-bold text-center mb-5" >
                       Upcoming Meetings
                     </h4>
                     {errTrainingCourse ? (
-                      <h3 className="text-center fw-bold">
+                      <h3 className="text-center fw-bold" >
                         {errTrainingCourse?.response?.data}
                       </h3>
                     ) : (
@@ -110,14 +110,14 @@ export default function DashMeetings() {
                     />
                   </div>
                 </div>
-                <div className="col-12 mt-4">
-                  <div className="w-100 py-4 px-3 bg-body rounded-3 shadow-light">
+                <div className="col-12 mt-4 " >
+                  <div className="w-100 py-4 px-3 bg-body rounded-3 shadow-light " >
                     <h6 className="fw-bold">Create or Join a Meeting</h6>
                     <div className="row align-items-center gy-3">
                       <div className="col-md-5 pb-1">
                         <CreateMeeting refetchAllTrainng={refetchAllTrainng} />
                       </div>
-                      <div className="col-md-7 ps-md-0">
+                      <div className="col-md-7 ps-md-0" >
                         <PopJoinCode join={joinMeeting} />
                       </div>
                     </div>
@@ -126,7 +126,7 @@ export default function DashMeetings() {
               </div>
             </div>
             <div className={`col-md-7 ${fullScreen}`}>
-              <div className="now-meeting rounded-4 overflow-hidden shadow position-relative">
+              <div className="now-meeting rounded-4 overflow-hidden shadow position-relative ">
                 <button
                   disabled={!urlMeetingNow}
                   onClick={toggleScreen}
@@ -152,7 +152,7 @@ export default function DashMeetings() {
                     className="d-flex align-items-center justify-content-center rounded-4 overflow-hidden shadow border"
                     style={{ height: "80vh" }}
                   >
-                    <h5 className="text-center text-white">No Meeting Now</h5>
+                    <h5 className="text-center" >No Meeting Now</h5>
                   </div>
                 )}
               </div>
@@ -161,7 +161,7 @@ export default function DashMeetings() {
           <div className="row mt-5">
             <div className="col-12">
               {newMeeting ? (
-                <div className="card-meeting py-4 px-4 bg-body rounded-3 shadow-light">
+                <div className="card-meeting py-4 px-4 bg-body rounded-3 shadow-light ">
                   <div className="info-meeting d-flex justify-content-between">
                     <p>creation Date</p>
                     <span className="fw-bold">
@@ -195,7 +195,7 @@ export default function DashMeetings() {
                   </div>
                 </div>
               ) : (
-                <div className="card-meeting py-4 px-4 bg-body rounded-3 shadow-light h-100">
+                <div className="card-meeting py-4 px-4 bg-body rounded-3 shadow-light h-100 ">
                   <h3>No Meeting Create!</h3>
                 </div>
               )}

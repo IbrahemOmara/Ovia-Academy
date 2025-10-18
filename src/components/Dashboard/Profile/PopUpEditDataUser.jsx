@@ -59,7 +59,7 @@ export default function PopUpEditDataUser({ refetchDataUser,dataUser }) {
         Edite
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle className="bg-main-color text-white">
+        <DialogTitle className="bg-main-color ">
           Edite your information
         </DialogTitle>
         <DialogContent
@@ -111,10 +111,10 @@ export default function PopUpEditDataUser({ refetchDataUser,dataUser }) {
               </div>
             </div>
             <DialogActions className="bg-main-color mt-4 pt-3 border-top">
-              <Button className="text-white" onClick={handleClose}>
+              <Button className="" onClick={handleClose}>
                 Cancel
               </Button>
-              <Button className="text-white" type="submit">
+              <Button className="" type="submit">
                 Submit
               </Button>
             </DialogActions>

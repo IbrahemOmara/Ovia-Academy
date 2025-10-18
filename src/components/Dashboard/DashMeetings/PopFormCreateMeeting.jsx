@@ -78,7 +78,7 @@ export default function PopFromCreateMeeting({ refetchAllTrainng }) {
         Meeting
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle className="bg-main-color text-white">
+        <DialogTitle className="bg-main-color ">
           Create Meeting
         </DialogTitle>
         <DialogContent
@@ -138,12 +138,12 @@ export default function PopFromCreateMeeting({ refetchAllTrainng }) {
               </div>
             </div>
             <DialogActions className="bg-main-color mt-4 pt-3 border-top">
-              <Button className="text-white" onClick={handleClose}>
+              <Button className="" onClick={handleClose}>
                 Cancel
               </Button>
               <Button
                 disabled={btnLoading}
-                className="text-white"
+                className=""
                 type="submit"
               >
                 {btnLoading ? <BtnLoading /> : "Create"}

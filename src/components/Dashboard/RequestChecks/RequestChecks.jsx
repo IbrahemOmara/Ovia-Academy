@@ -27,7 +27,7 @@ export default function RequestChecks() {
   },[]);
 
   if(loading) return <Loading/>
-  if(bankChecks.length==0) return <h1 className='text-white text-center'>No Checks</h1>;
+  if(bankChecks.length==0) return <h1 className=' text-center'>No Checks</h1>;
 
   return (
     <>

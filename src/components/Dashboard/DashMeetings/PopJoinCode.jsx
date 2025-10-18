@@ -112,15 +112,15 @@ export default function PopJoinCode({join}) {
             ) : (
               <div className="">
                 <div className="info d-flex justify-content-between">
-                  <p className="text-white">Trainning Name</p>
+                  <p className="">Trainning Name</p>
                   <p className="">{dataMeeting?.trainningName}</p>
                 </div>
                 <div className="info d-flex justify-content-between">
-                  <p className="text-white">Trainning Code</p>
+                  <p className="">Trainning Code</p>
                   <p className="">{dataMeeting?.trainningCode}</p>
                 </div>
                 <div className="info d-flex justify-content-between">
-                  <p className="text-white">Date</p>
+                  <p className="">Date</p>
                   <p className="">{dataMeeting?.date}</p>
                 </div>
               </div>
@@ -132,13 +132,13 @@ export default function PopJoinCode({join}) {
         <DialogActions>
           <Button
             onClick={()=>join(()=>prepairUrlMeeting(dataMeeting.trainningName,dataMeeting.createdBy))}
-            className="text-black text-capitalize fw-bold"
+            className="text-black text-capitalize fw-bold Y-border"
           >
             Join
           </Button>
           <Button
             onClick={handleClose}
-            className="text-black text-capitalize fw-bold"
+            className="text-black text-capitalize fw-bold "
           >
             Close
           </Button>

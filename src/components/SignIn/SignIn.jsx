@@ -189,7 +189,7 @@ export default function SignIn() {
                         role="alert"
                       >
                         {invalid}
-                        Password or email is wrong
+                        
                       </div>
                     </div>
                   </div>

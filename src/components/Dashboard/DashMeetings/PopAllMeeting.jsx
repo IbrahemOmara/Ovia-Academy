@@ -30,7 +30,7 @@ export default function PopAllMeeting({ data ,join}) {
   return (
     <React.Fragment>
       <Button
-        className="text-black border text-capitalize fw-bold d-block m-auto"
+        className="text-black border text-capitalize fw-bold d-block m-auto more-btn"
         onClick={handleClickOpen}
       >
         More<i className="fa-solid fa-arrow-right"></i>
@@ -46,7 +46,7 @@ export default function PopAllMeeting({ data ,join}) {
               <h4 className="fw-bold text-center mb-5">Upcoming Meetings</h4>
               {data?.map((trainging, ind) => {
                 return new Date(trainging.trainingDate) - new Date() >= -14400000 ? (
-                 
+                
                   <ShowMeeting key={ind} dataUser={dataUser} trainging={trainging} joinMeeting={join} />
                 ) : (
                   ""

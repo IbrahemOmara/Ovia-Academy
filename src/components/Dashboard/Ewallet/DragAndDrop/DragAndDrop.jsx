@@ -77,7 +77,7 @@ export default function DragAndDrop() {
   return (
     <form onSubmit={formik.handleSubmit} className="drag">
       <div>
-        <label htmlFor="methodid" className="form-label text-white my-fw-bold">
+        <label htmlFor="methodid" className="form-label  my-fw-bold">
           Method
         </label>
         <select
@@ -103,7 +103,7 @@ export default function DragAndDrop() {
       <div className="mt-4">
         <label
           htmlFor="cardNumber"
-          className="form-label text-white my-fw-bold"
+          className="form-label  my-fw-bold"
         >
           Account Number
         </label>
@@ -127,7 +127,7 @@ export default function DragAndDrop() {
       <div className="mt-4">
         <label
           htmlFor="accountNum"
-          className="form-label text-white my-fw-bold"
+          className="form-label  my-fw-bold"
         >
           Upload Identification card
         </label>
@@ -136,7 +136,7 @@ export default function DragAndDrop() {
             <div className="">
               <label
                 htmlFor="nationalIdfront"
-                className="form-label text-white my-fw-bold d-block m-auto text-center"
+                className="form-label  my-fw-bold d-block m-auto text-center"
               >
                 Front
               </label>
@@ -189,7 +189,7 @@ export default function DragAndDrop() {
             <div className="">
               <label
                 htmlFor="nationalIdback"
-                className="form-label text-white my-fw-bold d-block m-auto text-center"
+                className="form-label  my-fw-bold d-block m-auto text-center"
               >
                 Back
               </label>

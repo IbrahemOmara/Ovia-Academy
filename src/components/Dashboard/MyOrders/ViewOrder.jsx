@@ -50,7 +50,7 @@ export default function ViewOrder() {
                         aria-hidden="true"
                       ></i>
                     </div>
-                    <h5 className="text-center fw-bold mt-3">Order Success!</h5>
+                    <h5 className="text-center fw-bold mt-3" style={{color:"#1a8755"}}>Order Success!</h5>
                   </div>
                 </div>
                 <div className="card-body pt-4">

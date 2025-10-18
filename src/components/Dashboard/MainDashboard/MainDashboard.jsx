@@ -9,7 +9,7 @@ import UploadImg from '../BunnyImages/UploadImg';
 export default function MainDashboard() {  
 
   return (
-     <section className="main-dashboard mt-3">
+      <section className="main-dashboard mt-3">
 
         <div className="container-fluid">
           <div className="row gy-4 ">
@@ -18,7 +18,7 @@ export default function MainDashboard() {
               </div>
               <div className="col-md-6">
                 <AreaCards2 />
-             </div>
+              </div>
           </div>
           <div className="row mt-4">
             <div className="col-12">

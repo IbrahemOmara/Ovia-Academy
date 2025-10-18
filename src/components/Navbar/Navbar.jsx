@@ -78,9 +78,9 @@ export default function Navbar() {
               </ul>
               {dataAuth ? (
                 dataAuth.role === "Active" ? (
-                  <div className="nav-item d-flex align-items-center">
+                  <div className="nav-item d-flex align-items-center ">
                     <Link
-                      className="text-white link-dashboard"
+                      className="text-white link-dashboard "
                       to="/dashboard-user"
                     >
                       <i className="fa-solid fa-table-columns"></i>
@@ -90,7 +90,7 @@ export default function Navbar() {
                 ) : dataAuth.role === "Instructor" ? (
                   <div className="nav-item d-flex align-items-center">
                     <Link
-                      className="text-white link-dashboard"
+                      className="text-white link-dashboard "
                       to="/dashboard-instructor"
                     >
                       <i className="fa-solid fa-table-columns"></i>

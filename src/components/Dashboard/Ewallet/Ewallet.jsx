@@ -123,7 +123,7 @@ export default function Ewallet() {
                     type="button"
                     className="btn bg-grdient"
                   >
-                   Confirme Bank Account
+                    Confirme Bank Account
                   </button>
                 ) : (
                   <button
@@ -186,7 +186,7 @@ export default function Ewallet() {
                 <tr>
                   <th
                     scope="col"
-                    className="card-data card-data2 rounded-0 ps-3"
+                    className="card-data card-data5 rounded-0 ps-3"
                   >
                     Hold Amount
                   </th>
@@ -195,7 +195,7 @@ export default function Ewallet() {
                 </tr>
               </thead>
               <tbody className="">
-                <tr className="text-white fw-bolder text-center border">
+                <tr className=" fw-bolder text-center border">
                   <td>${amounts?.data.holdAmount}</td>
                   <td>
                     {amounts
@@ -248,7 +248,7 @@ export default function Ewallet() {
               </tbody>
             </table>
             <div className="d-flex justify-content-center">
-              <h2 className="text-white"> {balanceHistErr?.response.data}</h2>
+              <h2 className=""> {balanceHistErr?.response.data}</h2>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 .quotes-section {
-  background-color: var(--bg-main-color);
+  background-color: var(--secondColor) !important;
 }
 
 .section-title {

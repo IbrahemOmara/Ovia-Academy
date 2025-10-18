@@ -1,7 +1,7 @@
 
 .dash-Meetings .code-meeting .form-control {
     color: #000000 !important;
-    box-shadow: 0 0 0 1px #000000 !important;
+
 }
 
 .dash-Meetings .code-meeting .form-control::placeholder {
@@ -13,4 +13,21 @@
     position:absolute;;
     bottom: 10px;
     right: 10px;
+}
+.upcoming-meeting{
+    background-color: var(--secondColorDark) !important;
+}
+
+.upcoming-meeting h3{
+    color: var(--secondColor)!important;
+}
+.upcoming-meeting h4{
+    color: var(--secondColorLight) !important;
+}
+.more-btn{
+    color: #fff !important;
+}
+.Y-border{
+    border: solid 1px var(--secondColor) !important;
+
 }

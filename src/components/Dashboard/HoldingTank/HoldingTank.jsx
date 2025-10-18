@@ -141,7 +141,7 @@ export default function HoldingTank() {
     <>
       <section className="holding-tank" id="HoldingTank">
         <div className="container">
-          <div className="row text-white">
+          <div className="row " style={{color:"#c59846", padding:"20px 0px"}}>
             <div className="col-1 d-none d-md-block "></div>
             <div className="col-2">
               <h6 className="fw-bold">Name</h6>
@@ -160,29 +160,29 @@ export default function HoldingTank() {
             return !item.hasParent ? (
               <div
                 key={item.customerAttributeId}
-                className="row fs-small fw-semibold position-relative mt-2 py-3 rounded-3 bg-body text-black align-items-center"
+                className="row fs-small fw-semibold position-relative mt-2 py-3 rounded-3 text-black align-items-center table-row"
               >
                 <div className="col-1 p-0 ps-1 p-md-2 d-none d-md-block ">
                   <div className="icon">
                     <i className="fa-solid fa-user text-main"></i>
                   </div>
                 </div>
-                <div className="col-4 col-md-3 p-0 ps-1 p-md-2">
+                <div className="col-4 col-md-2 p-0 ps-1 p-md-2">
                   <div className="">
                     <p className="m-0">{item.name}</p>
                   </div>
                 </div>
-                <div className="col-4 p-0 ps-1 p-md-2 ">
+                <div className="col-3 p-0 ps-1 p-md-2 ">
                   <div className=" w-100">
                     <p className="m-0  w-100">{item.email}</p>
                   </div>
                 </div>
-                <div className="col-2 p-0 ps-1 p-md-2 ">
+                <div className="col-3 p-0 ps-1 p-md-2 ">
                   <div className="">
                     <p className="m-0 fw-bolder">{item.backOfficeId}</p>
                   </div>
                 </div>
-                <div className="col-2 p-0 ps-1 p-md-2">
+                <div className="col-3 p-0 ps-1 p-md-2">
                   <div className="fs-6">
                     <div className="d-flex align-items-center">
                       {item.status === "Active" && !item.hasParent ? (

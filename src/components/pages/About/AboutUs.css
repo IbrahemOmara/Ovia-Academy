@@ -8,14 +8,14 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(rgba(255, 188, 20, 0.6), rgb(255, 255, 255));
+  background: linear-gradient(var(--secondColorDark), rgb(255, 255, 255)) !important;
   min-height: 300px;
 }
 
 .hero-section h1 {
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--secondColorDark);
+  color: var(--mainColor);
 }
 
 .hero-section p {
@@ -28,6 +28,8 @@
   border: none;
   transition: all 0.3s ease-in-out;
   border-radius: 12px;
+  background-color: var(--secondColorDark);
+  color: var(--secondColorLight);
 }
 
 .card:hover {
@@ -48,11 +50,23 @@
 }
 
 /* Team Cards */
+
+.team{
+  padding: 0px;
+}
+.team-card{
+  border-radius: 0px;
+  background-color: var(--secondColorLight);
+  color: var(--secondColor);
+  border-left: solid .5px var(--mainColor);
+}
+
 .team-card img {
   height: 220px;
   object-fit: cover;
-  border-radius: 12px 12px 0 0;
+  border-radius: 0;
 }
+
 
 /* Core Values */
 .list-group-item {
@@ -76,16 +90,30 @@ ul.list-unstyled svg {
   font-size: 1.2rem;
 }
 
+
+.about .rounded-pill{
+  background-color: var(--secondColorLight);
+  border: solid 1px var(--mainColor);
+  color: var(--secondColorDark);
+  font-weight: 400;
+}
+
+.about .rounded-pill:hover{
+  background-color: var(--secondColor);
+
+}
+
+
 /* Accordion */
 .accordion-button:not(.collapsed) {
-  background-color: #e9f1ff;
-  color: #0d6efd;
+  background-color: var(--secondColorLight);
+  color: var(--secondColor);
   font-weight: 600;
 }
 
 .accordion-body {
   background-color: #fff;
-  color: #333;
+  color: var(--secondColorDark);
 }
 
 /* Data Collection Form */
@@ -100,18 +128,22 @@ ul.list-unstyled svg {
 
 #data-collection .btn {
   font-weight: 600;
+  border: none;
+  color: var(--secondColorDark);
+  background-color: var(--secondColorLight);
   transition: all 0.3s ease-in-out;
 }
 
 #data-collection .btn:hover {
   background-color: #0a58ca;
   transform: translateY(-2px);
+  color: var(--mainColor);
 }
 
 #data-collection .card {
   background-color: #f8f9fa;
   border-radius: 20px;
-  border: none;
+  border: solid 1px var(--secondColor);
 }
 
 /* Typography */
@@ -123,7 +155,7 @@ h4 {
 }
 
 .text-primary {
-  color: #0d6efd !important;
+  color: var(--secondColor) !important;
 }
 
 /* Utility */

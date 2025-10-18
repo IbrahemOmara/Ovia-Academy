@@ -30,7 +30,7 @@ export default function MyCourses() {
   if (isLoading) return <Loading />;
 
   return error ? (
-    <h1 className="text-white text-center my-fw-bold mt-5">
+    <h1 className=" text-center my-fw-bold mt-5">
       {error.response.data}
     </h1>
   ) : (
@@ -47,7 +47,7 @@ export default function MyCourses() {
                         ? "/dashboard-instructor"
                         : "/dashboard-user"
                     }/my-courses/view-course/${course.id}/${course.name}`}
-                   
+                  
                   >
                     <div className="course-desc rounded">
                       <div className="head-course d-flex justify-content-between position-absolute w-100 p-2">

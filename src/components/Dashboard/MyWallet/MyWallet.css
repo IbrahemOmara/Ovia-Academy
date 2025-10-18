@@ -2,18 +2,22 @@
 
 .select-piont {
     background-color: transparent !important;
-    color: #ffffff;
+    color: var(--secondColorDark);
     box-shadow: none;
+    border-color:var(--secondColorLight);
     /* accent-color: #ffffff; */
 }
 
 .select-piont:focus {
     box-shadow: none;
-    border-color:#ffffff ;
+    border-color:var(--mainColor);
 }
 
 .show-code {
     height: 45px;
+}
+.code{
+    color: var(--secondColorDark);
 }
 
 .show-history-piont th {
@@ -21,7 +25,11 @@
     color: #000000;
     font-family: 'Almarai-Bold';
 }
-
+.paid-btn{
+    background-color: var(--secondColorDark) !important;
+    color: var(--secondColor);
+    width: 90px;
+}
 select option {
     display: block;
     background-color: #000000;

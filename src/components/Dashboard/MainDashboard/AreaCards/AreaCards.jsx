@@ -56,7 +56,7 @@ export default function AreaCards() {
       <div className="row mt-4 gy-4 justify-content-center">
         <div className="col-md-6 col-lg-4">
           <AreaCard
-            colors={["#e4e8ef", "#EB77D8"]}
+            colors={["#e4e8ef", "#e7b621"]}
             percentFillValue={(thisWeekDirects?.data/totalDircts?.data)*100||0}
             cardInfo={{
               title: "This Week",
@@ -68,7 +68,7 @@ export default function AreaCards() {
         </div>
         <div className="col-md-6 col-lg-4">
           <AreaCard
-            colors={["#e4e8ef", "#4ADEE8"]}
+            colors={["#e4e8ef", "#23211a"]}
             percentFillValue={(lastWeekDirects?.data/totalDircts?.data)*100||0}
             cardInfo={{
               title: "Last Week",
@@ -93,7 +93,7 @@ export default function AreaCards() {
             <div className="row justify-content-between w-100 m-0">
               <div className="d-flex flex-column justify-content-center h-100 ps-3">
                 <h6 className={`fw-bold m-0 fs-5 `}>Total Direct</h6>
-                <span className="fs-middle fw-bold">{totalDircts?.data||0}</span>
+                <span className="fs-middle fw-bold total">{totalDircts?.data||0}</span>
 
               </div>
             </div>

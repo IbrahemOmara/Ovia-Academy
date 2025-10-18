@@ -14,7 +14,7 @@ export default function Loading() {
             visible={true}
             height="80"
             width="80"
-            color="#fff"
+            color="#c59846"
             ariaLabel="puff-loading"
             wrapperStyle={{}}
             wrapperClass=""
