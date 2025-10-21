@@ -237,7 +237,7 @@ export default function About() {
                               "Global Reach",
                               "Diverse Opportunities",
                               "Flexibility",
-                              "Scalability & ruwadvision",
+                              "Scalability & Oviavision",
                             ][idx]
                           }
                           :

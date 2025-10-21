@@ -9,7 +9,7 @@ export default function DeskHeader() {
         <div className='title-header'>
             <img className='w-100 h-100' src={titleHeader}/>
         </div>
-        <p className='text-white mt-3'>Ruwad is aiming to teach young people freelance skills and 
+        <p className='mt-3'>Ovia is aiming to teach young people freelance skills and 
         educate them about trading to cope and meet the requirements of the global job market
         </p>
       </div>
