@@ -91,7 +91,7 @@ export default function About() {
             >
               Empowering Your Professional Future
             </motion.h1>
-            <p className="lead">Discover the Power of Education with Ovia Academy</p>
+            <p className="lead">Discover the Power of Education with OVIA GLOBAL</p>
           </Container>
         </section>
 
@@ -102,7 +102,7 @@ export default function About() {
               <Col>
                 <h2 className="text-center fw-bold">About Ovia </h2>
                 <p className="text-muted text-center mx-auto w-75">
-                  Ovia Academy is your go-to E-Learning hub for everything
+                  OVIA GLOBAL is your go-to E-Learning hub for everything
                   related to online business. We train freelancers and empower
                   youth to market and sell effectively.
                 </p>

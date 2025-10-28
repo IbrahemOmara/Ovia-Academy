@@ -133,7 +133,7 @@ export default function Pay() {
         <div className="container">
           <div className="row ">
             <div className="col-md-6 col-lg-5 m-auto ">
-              <div className="box-pay text-white">
+              <div className="box-pay ">
                 <div className="head-pay d-flex align-items-center gap-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +187,7 @@ export default function Pay() {
                             disabled={btnAddLoading}
                             type="button"
                             onClick={() => addTokens(token.values.tokens)}
-                            className="btn text-white bg-main-color-2 position-absolute end-0 top-0 h-100 "
+                            className="btn text-white bg-main-color-3 position-absolute end-0 top-0 h-100 "
                           >
                             {btnAddLoading ? (
                               <BtnLoading />

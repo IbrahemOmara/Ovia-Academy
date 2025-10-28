@@ -107,7 +107,7 @@ export default function Navbar() {
                     >
                       My List
                     </button>
-                    <ul className="dropdown-menu bg-main-color shadow ">
+                    <ul className="dropdown-menu  shadow " style={{backgroundColor:"#23211a"}}>
                       <li>
                         <Link
                           className="dropdown-item text-white"

@@ -120,7 +120,7 @@ export default function SignUpBalance() {
   return (
     <>
       <section className="my-wallet mt-5 pt-5" id="my-wallet">
-        <div className="container">
+        <div className="container mt-5 ">
           <div className="row">
             <div className="col-12">
               <div className="point-remain bg-grdient p-3 rounded-3 d-flex justify-content-between align-align-items-center ">
@@ -138,7 +138,7 @@ export default function SignUpBalance() {
                 <div className="point-request">
                   <label
                     htmlFor="tokenValue"
-                    className="form-label text-white my-fw-bold"
+                    className="form-label  my-fw-bold"
                   >
                     Piont Request
                   </label>
@@ -171,7 +171,7 @@ export default function SignUpBalance() {
             </div>
             <div className="row mt-3">
               <div className="col-md-8">
-                <h6 className="fw-bold fs-5 text-white">Code</h6>
+                <h6 className="fw-bold fs-5 ">Code</h6>
                 <div className="show-code border p-2 rounded-3 text-white-50 ">
                   {code}
                 </div>
@@ -187,7 +187,7 @@ export default function SignUpBalance() {
             >
               <li className="nav-item " role="presentation">
                 <button
-                  className="nav-link active btn p-0"
+                  className="nav-link active paid-btn btn p-0"
                   id="unPaid-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#unPaid-tab-pane"
@@ -201,7 +201,7 @@ export default function SignUpBalance() {
               </li>
               <li className="nav-item" role="presentation">
                 <button
-                  className="nav-link btn p-0"
+                  className="nav-link btn p-0 paid-btn"
                   id="paid-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#paid-tab-pane"
@@ -222,7 +222,7 @@ export default function SignUpBalance() {
                 aria-labelledby="unPaid-tab"
                 tabIndex={0}
               >
-                <h6 className="my-fw-bold text-white">
+                <h6 className="my-fw-bold ">
                   Total Price : {totalPriceUnPaid || 0}
                 </h6>
                 <div className="table-responsive show-history-piont rounded-3 ">
@@ -267,7 +267,7 @@ export default function SignUpBalance() {
                             );
                           })
                       ) : (
-                        <tr className="text-center mt-3 text-white position-absolute start-50">
+                        <tr className="text-center mt-3  position-absolute start-50">
                           {tokens}
                         </tr>
                       )}
@@ -282,7 +282,7 @@ export default function SignUpBalance() {
                 aria-labelledby="paid-tab"
                 tabIndex={0}
               >
-                <h6 className="my-fw-bold text-white">
+                <h6 className="my-fw-bold ">
                   Total Price : {totalPricePaid || 0}
                 </h6>
                 <div className="table-responsive show-history-piont rounded-3 ">
@@ -331,7 +331,7 @@ export default function SignUpBalance() {
                             );
                           })
                       ) : (
-                        <tr className="text-center mt-3 text-white position-absolute start-50">
+                        <tr className="text-center mt-3  position-absolute start-50">
                           {tokens}
                         </tr>
                       )}

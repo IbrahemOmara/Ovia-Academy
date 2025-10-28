@@ -17,23 +17,18 @@ export default function Footer() {
               </Link>
               <ul className="links-social list-unstyled d-flex justify-content-center justify-content-md-start gap-3 mt-3">
                 <li>
-                  <Link to="https://www.facebook.com" target="_blank">
+                  <Link to="https://www.facebook.com/share/1ZH8T77F4y/?mibextid=wwXIfr" target="_blank">
                     <i className="fab fa-facebook"></i>
                   </Link>
                 </li>
                 <li>
-                  <Link to="https://www.tiktok.com" target="_blank">
+                  <Link to="https://www.tiktok.com/@ovia_project?_t=ZS-90oskQSTARt&_r=1" target="_blank">
                     <i className="fab fa-tiktok"></i>
                   </Link>
                 </li>
                 <li>
-                  <Link to="https://www.instagram.com" target="_blank">
+                  <Link to="https://www.instagram.com/ovia_project?igsh=Z216cW56ZzZoc2Ix" target="_blank">
                     <i className="fab fa-instagram"></i>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="https://www.youtube.com" target="_blank">
-                    <i className="fab fa-youtube"></i>
                   </Link>
                 </li>
               </ul>
@@ -60,7 +55,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <i className="fa-solid fa-envelope me-2"></i>{" "}
-                    supports@Ovia.com
+                    oviaproject2025@gmail.com
                   </li>
                   <li>
                     <i className="fa-solid fa-globe me-2"></i>{" "}

@@ -34,7 +34,7 @@ export default function Cart() {
     <>
       <section className="cart min-vh-100 py-3" id="cart">
         <div className="container">
-          <h5 className=" pb-2 my-fw-bold border-bottom w-50">Your Cart</h5>
+          <h5 className=" pb-2 my-fw-bold border-bottom w-50 mt-5">Your Cart</h5>
           <p className="mt-3">
             You have {cart_packages.length} item in your cart
           </p>
@@ -101,7 +101,7 @@ export default function Cart() {
                     <button
                       onClick={pay}
                       type="button"
-                      className="btn text-white bg-grdient"
+                      className="btn text-white bg-grdient "
                     >
                       Checkout <i className="fa-solid fa-arrow-right"></i>
                     </button>

@@ -53,7 +53,7 @@ export default function Packages() {
     <>
       <section className="packages min-vh-100" id="packages">
         <div className="container-lg px-3 py-5">
-          <h2 className="text-white fw-bolder mb-5">Packages:</h2>
+          <h2 className="fw-bolder mb-5">Packages:</h2>
           <div className="row justify-content-center gy-5 ">
             {packages?.map((item) => {
               if (item.packageTypeId != 1)

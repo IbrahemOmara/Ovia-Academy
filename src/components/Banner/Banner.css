@@ -118,7 +118,22 @@
   .banner-heading {
     font-size: 2rem;
   }
+  .banner-slide{
+    height: 50vh;
+  }
+  .content-banner{
+    flex-direction: column;
+  }
 
+  .main-banner {
+    width: 100%;
+  }
+  .main-banner-2{
+    width: 100%;
+  }
+  .main-banner-2 img{
+    width: 100%;
+  }
   .banner-text {
     font-size: 1rem;
   }

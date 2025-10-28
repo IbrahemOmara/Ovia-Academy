@@ -1,12 +1,11 @@
 
 #cart {
     margin-top: 100px;
-    color: #fff;
 }
 
 .cart-box, .cart-summary {
-    box-shadow: 0 0 10px 0px #000;
-    border: 1px solid;
+    box-shadow: 0 0 10px 0px #a09f9f;
+    border: 1px solid var(--mainColor);
     padding: 5px 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;

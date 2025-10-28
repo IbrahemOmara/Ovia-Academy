@@ -9,8 +9,13 @@
     font-size: clamp(1rem,5vw,3.2rem);
 }
 
-.btn-pay,
-.btn-pay:hover  {
-    background-image:linear-gradient(to left,rgba(255,255,255,1),var(--secondColor));
-    color: #000000 !important;
+.btn-pay  {
+background-color: var(--secondColorDark);
+border: solid 1px var(--secondColor);
+color: var(--secondColor);
+}
+
+.btn-pay:hover {
+    scale: 1.01;
+    background-color: var(--secondColor) !important;
 }

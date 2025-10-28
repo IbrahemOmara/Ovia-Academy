@@ -19,7 +19,7 @@ export default function LiveTradingNNs() {
   return (
     <>
       <section className="mt-5 py-5">
-        <div className="container-fluid">
+        <div className="container-fluid mt-5">
           <div className="row">
             <div className="col-12">
               <div className="now-meeting rounded-4 overflow-hidden shadow">
