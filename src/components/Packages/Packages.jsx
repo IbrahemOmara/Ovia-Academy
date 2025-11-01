@@ -55,15 +55,19 @@ export default function Packages() {
         <div className="container-lg px-3 py-5">
           <h2 className="fw-bolder mb-5">Packages:</h2>
           <div className="row justify-content-center gy-5 ">
-            {packages?.map((item) => {
-              if (item.packageTypeId != 1)
-                return (
+            {packages && packages.filter(item => item.packageTypeId != 1).length > 0 ? (
+              packages
+                .filter(item => item.packageTypeId != 1)
+                .map(item => (
                   <div className="col-sm-6" key={item.id}>
                     <Package pkg={item} />
                   </div>
-                );
-            })}
+                ))
+            ) : (
+              <h4 className="text-center text-muted">No packages found</h4>
+            )}
           </div>
+
         </div>
       </section>
     </>

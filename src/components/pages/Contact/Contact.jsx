@@ -45,7 +45,7 @@ const Contact = () => {
               <div className=" contact-info ">
                 <h5 className="my-fw-bold text-main-2 mb-3">Get in Touch</h5>
                 <p>
-                  <strong>Email:</strong> support@Ovia
+                  <strong>Email:</strong> oviaproject2025@gmail.com
                 </p>
                 <p>
                   <strong>Phone:</strong> +20 123 456 789

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Spinner, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import coursePic from "../../../assets/cources/digitalMarkting.jpeg"
 import { baseURL } from "../../../utils/baseURL";
 export default function Courses() {
   const [courses, setCourses] = useState([]);
@@ -42,22 +43,22 @@ export default function Courses() {
   }
 
   return (
-    <div className="container py-5">
-      <h2 className="text-center mb-5">Featured Courses</h2>
+    <div className="container py-5 mt-5">
+      <h2 className="text-center mb-5 mt-5">Featured Courses</h2>
       <div className="row g-4">
         {courses.map((course) => (
-          <div key={course.id} className="col-sm-6 col-md-4 col-lg-3">
-            <Card className=" course-card">
+          <div key={course.id} className="col-sm-6 col-md-4 col-lg-4">
+            <Card className="course-card">
               <Card.Img
                 variant="top"
                 src={
                   course.photos ||
-                  "https://images.pexels.com/photos/7092350/pexels-photo-7092350.jpeg"
+                  coursePic
                 }
-                className="mb-3 rounded"
+                className="mb-3 rounded course-card-img"
               />
               <Card.Body className="d-flex flex-column">
-                <Card.Title className="fs-6 mb-2">{course.name}</Card.Title>
+                <Card.Title className=" mb-2" style={{textAlign:"center"}}>{course.name}</Card.Title>
                 <Card.Text className="text-muted small mb-2">
                   {course.desc
                     ? course.desc.substring(0, 60) + "..."
@@ -68,16 +69,16 @@ export default function Courses() {
                   <div>
                     <span> Price:</span>{" "}
                     {course.oldPrice && (
-                      <span className="text-decoration-line-through text-muted me-2">
+                      <span className="text-decoration-line-through text-muted me-2 ">
                         {course.oldPrice} EGP
                       </span>
                     )}
-                    <span className="fw-bold text-success">
+                    <span className="fw-bold text-success price">
                       {course.price} EGP
                     </span>
                   </div>
                   <Button
-                    className="course-details"
+                    className="course-details-btn"
                     variant="outline-primary"
                     size="sm"
                     onClick={() =>

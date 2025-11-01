@@ -20,7 +20,23 @@ nav {
   object-fit: fill;
   margin-top: -40%;
 } */
-
+.btn-dash{
+  border: solid 1px var(--secondColorDark);
+  border-radius: 20px;
+  background-color: var(--secondColorLight);
+  cursor: pointer;
+}
+.btn-dash:hover{
+  scale: 1.01;
+  background-color: #FFC400;
+}
+.btn-out{
+  background-color: var(--secondColor);
+  cursor: pointer;
+}
+.btn-out:hover{
+  background-color: #FFC400;
+}
 .nav-item {
   padding: 0 12px;
 }

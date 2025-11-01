@@ -6,6 +6,9 @@ import { FaUsers, FaGlobe, FaClock, FaMoneyBillWave } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseURL } from "../../../utils/baseURL";
+import TLpic from "../../../assets/Ovia-logo/TeamLeader.png"
+import CEOpic from "../../../assets/Ovia-logo/CEO.png"
+import coursePic from "../../../assets/cources/digitalMarkting.jpeg"
 
 export default function About() {
   const [courses, setCourses] = useState([]);
@@ -38,24 +41,14 @@ export default function About() {
   }, []);
   const team = [
     {
-      name: "Ahmed Elsayed",
-      role: "Trainer",
-      img: "https://images.pexels.com/photos/702139/pexels-photo-702139.jpeg",
+      name: "Ahmed Ragab",
+      role: "Founder & CEO – Ovia Project",
+      img: CEOpic,
     },
     {
-      name: "Mona Adel",
-      role: "Marketing Expert",
-      img: "https://images.pexels.com/photos/702139/pexels-photo-702139.jpeg",
-    },
-    {
-      name: "Khaled Hassan",
-      role: "Content Creator",
-      img: "https://images.pexels.com/photos/702139/pexels-photo-702139.jpeg",
-    },
-    {
-      name: "Sara Youssef",
-      role: "Support Lead",
-      img: "https://images.pexels.com/photos/702139/pexels-photo-702139.jpeg",
+      name: "Mostafa Yasser",
+      role: "Team Leader – Ovia Project",
+      img: TLpic,
     },
   ];
 
@@ -182,12 +175,12 @@ export default function About() {
                         variant="top"
                         src={
                           course.photos ||
-                          "https://images.pexels.com/photos/7092350/pexels-photo-7092350.jpeg"
+                          coursePic
                         }
                         alt={course.name || course.title}
                       />
                       <Card.Body>
-                        <h5 className="fw-bold">
+                        <h5 className="">
                           {course.name || course.title}
                         </h5>
                         <p className="text-muted">
@@ -195,6 +188,7 @@ export default function About() {
                         </p>
                         <div className="text-end">
                           <Button
+                            className="course-details-btn"
                             variant="outline-primary"
                             size="sm"
                             onClick={() =>
@@ -266,7 +260,7 @@ export default function About() {
                 </p>
               </Col>
             </Row>
-            <Row className="text-center ">
+            <Row className="text-center justify-content-center">
               {team.map((member, idx) => (
                 <Col md={6} lg={3} key={idx} className="mb-4 team">
                   <Card className="shadow-sm team-card h-100">
@@ -390,3 +384,35 @@ export default function About() {
     </div>
   );
 }
+<p>
+  المحتوي:
+  اساسيات التسويق - المزيج التسويقي - دراسه المنافسين - سلوك المستهلك.
+  الذكاء الاصطناعي:
+  استخدام Notion AI و Gemini و ChatGPT   في تحليل السوق و صناعة الرسائل الاعلانية. 
+  الشهادات:
+  شهادات دولية من منصات تسويق عالمية ISO+ , Ovia Marketing professional+ . 
+  الارباح المتوقعة:
+  أسبوعياََ: 100- 300 دولار. 
+  شهرياََ: 400 - 1200 دولار. 
+  فرص العمل:
+  (Marketing Specialist - Brand Strategist - Campaign Manager)
+
+
+
+📚 Content:
+
+Marketing fundamentals – Marketing presence – Competitor analysis – Consumer positioning.
+
+🤖 Artificial Intelligence:
+Using ChatGPT, Gemini, and Notion AI in analyzing the advertising messaging market and industry.
+
+🏅 Certifications:
+Ovia Marketing Professional + ISO + Global Marketing membership certificates.
+
+💵 Contract:
+Weekly: $100 – $300
+Monthly: $400 – $1200
+
+💼 Job Opportunities:
+Marketing Specialist - Brand Strategist - Campaign Manager
+</p>

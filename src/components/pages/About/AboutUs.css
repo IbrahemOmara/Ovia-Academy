@@ -63,7 +63,7 @@
 
 .team-card img {
   height: 220px;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 0;
 }
 

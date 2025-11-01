@@ -53,7 +53,7 @@ export default function Navbar() {
                 <i className="fa-solid fa-close fs-3 text-white"></i>
               </button>
             </div>
-            <div className="offcanvas-body py-2 d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between gap-3 w-100">
+            <div className="offcanvas-body py-2 d-flex flex-column flex-lg-row align-items-start align-items-lg-center  gap-5 w-100">
               <ul className="navbar-nav mt-2 m-lg-auto mb-2 mb-lg-0">
                 <li className="nav-item ">
                   <NavLink className="nav-link" aria-current="page" to="/home">
@@ -78,9 +78,10 @@ export default function Navbar() {
               </ul>
               {dataAuth ? (
                 dataAuth.role === "Active" ? (
-                  <div className="nav-item d-flex align-items-center ">
+                  <div className="nav-item d-flex align-items-center btn-dash">
                     <Link
-                      className="text-white link-dashboard "
+                      className=" link-dashboard "
+                      style={{color:"#23211a"}}
                       to="/dashboard-user"
                     >
                       <i className="fa-solid fa-table-columns"></i>
@@ -155,11 +156,11 @@ export default function Navbar() {
               )}
 
               {dataAuth?.token.token?.length > 0 ? (
-                <ul className="navbar-nav">
-                  <li className="nav-item p-0">
+                <ul className="navbar-nav ">
+                  <li className="nav-item p-0 ">
                     <button
                       onClick={logOut}
-                      className="btn text-white link-dashboard p-0 mt-2 ms-3 fa-rotate-180"
+                      className="btn  link-dashboard p-0 mt-2 ms-3 fa-rotate-180 btn-out"
                       to="/sign-in"
                     >
                       <svg

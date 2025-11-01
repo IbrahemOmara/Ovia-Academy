@@ -224,8 +224,8 @@ export default function Pay() {
                     </div>
                     <div className="col-12">
                       <div className=" border rounded-2 ps-2 py-2 fw-bold d-flex gap-3 flex-wrap mt-2">
-                       <p className="fw-medium m-0 text-just">Your Tokens value : <span className="fw-bold">{(prams.toPrice - "0")-price}</span></p>
-                       <p className="fw-medium m-0 text-just">Remaining value : <span className="fw-bold">{price}</span></p>
+                        <p className="fw-medium m-0 text-just">Your Tokens value : <span className="fw-bold">{(prams.toPrice - "0")-price}</span></p>
+                        <p className="fw-medium m-0 text-just">Remaining value : <span className="fw-bold">{price}</span></p>
                       </div>
                     </div>
                   </div>

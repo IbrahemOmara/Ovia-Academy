@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
+import './Courses.css'
+import coursePic from "../../../assets/cources/digitalMarkting.jpeg"
 
 export default function CourseDetails() {
   const location = useLocation();
@@ -27,47 +29,33 @@ export default function CourseDetails() {
 
   return (
     <div className="content-course">
-      <div className="container py-5">
+      <div className="container py-5 mt-5">
         <Button
           variant="secondary"
           onClick={() => navigate(-1)}
-          className="mb-4"
+          className="mb-4 mt-5"
         >
           ⬅ Back to Courses
         </Button>
 
-        <Card className="shadow p-4">
+        <Card className="shadow p-4 course-card-details">
           <Card.Img
             variant="top"
             src={
               course.photos ||
-              "https://images.pexels.com/photos/7092350/pexels-photo-7092350.jpeg"
+              coursePic
             }
             alt={course.name}
             className="mb-3 rounded custom-course-image"
           />
           <Card.Body>
-            <Card.Title className="fs-3 mb-3">{course.name}</Card.Title>
-            <Card.Text style={{ whiteSpace: "pre-line" }}>
+            <Card.Title className="fs-3 mb-3" style={{textAlign:"center"}}>{course.name}</Card.Title>
+            <Card.Text style={{ whiteSpace: "pre-line",textAlign:"right"}}>
               {course.fullDesc || course.desc || "No description available."}
             </Card.Text>
 
             <ul className="list-unstyled mb-3">
-              <li>
-                <strong>Instructor:</strong>{" "}
-                {course.instractorName
-                  ? course.instractorName.join(", ")
-                  : "N/A"}
-              </li>
-              <li>
-                <strong>Videos:</strong> {course.noOfVideos || 0}
-              </li>
-              <li>
-                <strong>Hours:</strong> {course.totalHouers || 0}
-              </li>
-              <li>
-                <strong>Category:</strong> {course.category?.name || "N/A"}
-              </li>
+            
               <li>
                 <strong>Price:</strong>{" "}
                 {course.oldPrice && (
@@ -75,7 +63,7 @@ export default function CourseDetails() {
                     {course.oldPrice} EGP
                   </span>
                 )}
-                <span className="fw-bold text-success">{course.price} EGP</span>
+                <span className="fw-bold text-success" style={{fontSize:"1.5em"}}>{course.price} EGP</span>
               </li>
             </ul>
 
