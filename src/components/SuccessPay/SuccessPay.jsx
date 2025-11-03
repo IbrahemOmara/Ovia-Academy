@@ -12,6 +12,7 @@ const {setBuyPkg} = useContext(StoreContext);
 
   return (
     <>
+      
       <div className="success-pay vh-100 d-flex align-items-center justify-content-center">
         <div className="container">
             <img className='d-block w-50 h-50 m-auto' src={imgPay} alt="Success Pay!"/>
