@@ -1,0 +1,569 @@
+.tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: "Cairo", sans-serif;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.tree-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node-box {
+  background-color: #0f172a;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.node-box:hover {
+  transform: scale(1.05);
+}
+
+.node-box.no-children {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.node-id,
+.node-email,
+.node-mobile,
+.node-hand-side,
+.node-referrid,
+.node-rank {
+  font-size: 12px;
+  color: #cbd5e1;
+  margin-top: 4px;
+}
+
+.node-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #f1f5f9;
+  margin-top: 4px;
+}
+
+.children {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 50px;
+  gap: 60px;
+}
+
+.tree-node::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  background-color: #94a3b8;
+  z-index: 1;
+}
+
+.children::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  height: 2px;
+  width: 100%;
+  background-color: #94a3b8;
+  left: 0;
+}
+
+.child-line {
+  position: relative;
+}
+
+.child-line::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background-color: #94a3b8;
+  z-index: 1;
+}
+
+.back-to-root-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-root-btn:hover {
+  background-color: #0056b3;
+}
+
+.fixed-root-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* --- عقدة دائرية مع صورة واسم وID --- */
+.node-box-circle {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #e0e0e0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+  border: 3px solid #a48cf0;
+  transition: box-shadow 0.2s, border 0.2s;
+  padding: 0;
+}
+.node-box-circle:hover {
+  box-shadow: 0 4px 16px #a48cf088;
+  border: 3px solid #7c5fe6;
+}
+.avatar-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+.node-id {
+  font-size: 13px;
+  color: #7c5fe6;
+  margin-top: 2px;
+  font-weight: 600;
+  text-align: center;
+}
+.node-name {
+  font-size: 15px;
+  color: #222;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.node-id {
+  font-size: 13px;
+  color: #7c5fe6;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.node-name {
+  font-size: 15px;
+  color: #222;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* --- زر الإضافة --- */
+.add-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.add-btn {
+  background: #4fc3f7;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #b2ebf2;
+  transition: background 0.2s;
+}
+.add-btn:hover {
+  background: #0288d1;
+}
+
+/* --- خطوط الشجرة --- */
+.tree-node::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  background-color: #a48cf0;
+  z-index: 1;
+}
+.children {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 50px;
+  gap: 60px;
+}
+.children::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  height: 2px;
+  width: 100%;
+  background-color: #a48cf0;
+  left: 0;
+}
+.child-line {
+  position: relative;
+}
+.child-line::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background-color: #a48cf0;
+  z-index: 1;
+}
+
+/* --- نافذة منبثقة --- */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup-content {
+  background: #a48cf0;
+  border-radius: 18px;
+  padding: 32px 40px 24px 40px;
+  color: #fff;
+  min-width: 320px;
+  box-shadow: 0 4px 24px #8882;
+  text-align: center;
+  position: relative;
+}
+.avatar-circle-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 10px auto;
+  border: 3px solid #fff;
+  background: #f6f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-circle-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.popup-id {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.popup-name {
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.popup-details {
+  margin-top: 10px;
+  text-align: left;
+  max-height: 250px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.popup-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #fff;
+}
+.popup-key {
+  font-weight: 500;
+  color: #e0e0ff;
+}
+.popup-value {
+  color: #fff;
+}
+.popup-close-btn {
+  margin-top: 18px;
+  padding: 7px 24px;
+  font-size: 15px;
+  background: #fff;
+  color: #a48cf0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.popup-close-btn:hover {
+  background: #7c5fe6;
+  color: #fff;
+}
+
+/* --- جدول بيانات البوب أب --- */
+.popup-table {
+  width: 100%;
+  margin-top: 16px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.popup-table td {
+  padding: 7px 10px;
+  font-size: 15px;
+  color: #fff;
+  border-bottom: 1px solid #e0e0ff33;
+}
+.popup-table tr:last-child td {
+  border-bottom: none;
+}
+.popup-key {
+  font-weight: 600;
+  color: #e0e0ff;
+  text-align: left;
+  width: 40%;
+}
+.popup-value {
+  color: #fff;
+  text-align: right;
+  width: 60%;
+}
+
+/* --- عقدة دائرية فقط صورة وID واسم --- */
+.node-box-circle {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #e0e0e0;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+  border: 3px solid #a48cf0;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+.node-box-circle:hover {
+  box-shadow: 0 4px 16px #a48cf088;
+  border: 3px solid #7c5fe6;
+}
+.avatar-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  border: 2px solid #a48cf0;
+  background: #f6f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.node-id {
+  font-size: 13px;
+  color: #7c5fe6;
+  margin-top: 2px;
+  font-weight: 600;
+}
+.node-name {
+  font-size: 15px;
+  color: #222;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+/* --- زر العودة للجذر --- */
+.back-to-root-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 14px;
+  background-color: #a48cf0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.back-to-root-btn:hover {
+  background-color: #7c5fe6;
+}
+
+.fixed-root-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.arrow-down-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.arrow-down-btn {
+  background: #fff;
+  color: #7c5fe6;
+  border: 2px solid #a48cf0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  padding: 0;
+}
+
+.arrow-down-btn:hover {
+  background: #a48cf0;
+  color: #fff;
+  border: 2px solid #7c5fe6;
+}
+
+@media (max-width: 768px) {
+  .children {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .tree-node::before,
+  .children::before,
+  .child-line::before {
+    display: none;
+  }
+  .node-box-circle {
+    min-width: 90px;
+    min-height: 90px;
+    width: 90px;
+    height: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .children {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .tree-node::before,
+  .children::before,
+  .child-line::before {
+    display: none;
+  }
+
+  .node-box {
+    min-width: 180px;
+    flex-shrink: 0;
+  }
+}
+.tree-node {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.popup-content {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -5,6 +5,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 import { styled } from "@mui/material/styles";
 import { SimpleTreeView } from "@mui/x-tree-view/SimpleTreeView";
 import { TreeItem, treeItemClasses } from "@mui/x-tree-view/TreeItem";
+import './tree.css'
 
 const CustomTreeItem = styled(TreeItem)({
   [`& .${treeItemClasses.iconContainer}`]: {
