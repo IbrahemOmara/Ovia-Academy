@@ -1,12 +1,12 @@
 .content-area-cards {
-    background-color: #fafafab0;
+
     padding: 20px 30px;
     border-radius: 5px !important;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
-    box-shadow: 0 0 3px 0 var(--secondColor);
+    background-color: #fff;
 }
 
 .content-area-cards h4{

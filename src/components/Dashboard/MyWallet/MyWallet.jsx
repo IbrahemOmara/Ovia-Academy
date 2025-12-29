@@ -165,6 +165,7 @@ export default function MyWallet() {
                     <option value="135">135</option>
                     <option value="150">150</option>
                     <option value="180">180</option>
+                    <option value="200">200</option>
                     <option value="235">235</option>
                     <option value="250">250</option>
                     <option value="330">330</option>

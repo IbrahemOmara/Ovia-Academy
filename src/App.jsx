@@ -14,8 +14,7 @@ import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes";
 import StoreContextProvider from "./context/storeContext";
 import ProtectedRoutesActive from "./ProtectedRoutes/ProtectedRoutesActive";
 import ProtectedRoutesInstructor from "./ProtectedRoutes/ProtectedRoutesInstructor";
-import Fx from "./components/Dashboard/Fx/Fx";
-import Meetings from "./components/Meetings/Meetings";
+
 import Contact from "./components/pages/Contact/Contact";
 // import Services from "./components/pages/Services/Services";
 import About from "./components/pages/About/About";
@@ -33,6 +32,7 @@ import LiveCourseNNs from "./components/Dashboard/Live/LiveCourseNNs";
 import MyBusiness from "./components/Dashboard/MyBusiness/MyBusiness";
 import TicketSupport from "./components/Dashboard/TicketSupport/TicketSupport";
 import EnrollerTree from "./components/Dashboard/EnrollerTree/EnrollerTree";
+import SponserTree from './components/Dashboard/EnrollerTree/SponserTree'
 import ViewCourseBunny from "./components/Dashboard/MyCourses/ViewCourseBunny";
 // Bootstrap Carousel
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -275,6 +275,16 @@ function App() {
             <ProtectedRoutes>
               <Suspense fallback={<Loading />}>
                 <EnrollerTree />
+              </Suspense>
+            </ProtectedRoutes>
+          ),
+        },
+        {
+          path: "sponser-tree",
+          element: (
+            <ProtectedRoutes>
+              <Suspense fallback={<Loading />}>
+                <SponserTree />
               </Suspense>
             </ProtectedRoutes>
           ),

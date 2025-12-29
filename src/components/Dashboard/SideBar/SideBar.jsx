@@ -88,6 +88,13 @@ export default function SideBar({ toggleSidebar }) {
                 <span className=" d-md-block"> NetWork Tree</span>
               </NavLink>
             </li>
+            {/* My Holding Tank */}
+            <li onClick={handleClick} className="nav-item">
+              <NavLink className="nav-link link-dashboard " to="sponser-tree">
+                <i className="fa-solid fa-folder-tree"></i>
+                <span className=" d-md-block"> Sponser Tree</span>
+              </NavLink>
+            </li>
             {/* live trading ns */}
             <li
               hidden={!dataUser.ns_balance}

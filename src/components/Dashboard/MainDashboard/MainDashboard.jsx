@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+
 import './MainDashboard.css'
 import AreaCards from './AreaCards/AreaCards';
 import AreaCards2 from './AreaCards2/AreaCards2';
 import MemberInfo from './MemberInfo/MemberInfo';
-import UploadImg from '../BunnyImages/UploadImg';
+import Profile from '../Profile/Profile'
 
 
 export default function MainDashboard() {  
@@ -23,7 +23,7 @@ export default function MainDashboard() {
           <div className="row mt-4">
             <div className="col-12">
               <div className="member-info">
-                <MemberInfo/>
+                <Profile />
               </div>
             </div>
           </div>
