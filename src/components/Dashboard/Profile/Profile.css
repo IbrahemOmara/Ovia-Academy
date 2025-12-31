@@ -1,12 +1,6 @@
 .my-profile .box-prof {
   padding: 20px;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  background-color: #fff;
-  box-shadow: 0 0 7px 0 #fff;
+  color: var(--mainColor);
   /* height: 530px; */
   position: relative;
 }
@@ -33,12 +27,12 @@
 }
 
 .my-profile .desc-profile span {
-  color: #0000008c;
+  color: #ffffff;
   margin-left: 50px;
 }
 
 .navs-prof .nav-link {
-    color:#000;
+    color:#ffffff;
     font-weight: 600;
     font-size: 0.9rem;
     border: none;

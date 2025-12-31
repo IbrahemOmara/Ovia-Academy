@@ -248,7 +248,7 @@ export default function Ewallet() {
               </tbody>
             </table>
             <div className="d-flex justify-content-center">
-              <h2 className=""> {balanceHistErr?.response.data}</h2>
+              <h2 className="text-white"> {balanceHistErr?.response.data}</h2>
             </div>
           </div>
         </div>

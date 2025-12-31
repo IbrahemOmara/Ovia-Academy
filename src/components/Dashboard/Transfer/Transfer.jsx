@@ -48,7 +48,7 @@ export default function Transfer() {
                 <div className="form-group">
                   <label
                     htmlFor="senderBackOfficeId"
-                    className="form-label  my-fw-bold"
+                    className="form-label  my-fw-bold text-white"
                   >
                     From Account
                   </label>
@@ -71,7 +71,7 @@ export default function Transfer() {
                 <div className="form-group">
                   <label
                     htmlFor="recieverBackOfficeId"
-                    className="form-label  my-fw-bold"
+                    className="form-label  my-fw-bold text-white"
                   >
                     To Account
                   </label>
@@ -91,7 +91,7 @@ export default function Transfer() {
                 <div className="form-group">
                   <label
                     htmlFor="amount"
-                    className="form-label  my-fw-bold"
+                    className="form-label  my-fw-bold text-white"
                   >
                     Amount (must be equal to or more than $15)
                   </label>

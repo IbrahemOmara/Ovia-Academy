@@ -43,7 +43,7 @@ export default function Profile() {
       <section className="my-profile mt-4">
         <div className="container">
           <div className="row gy-4 justify-content-center">
-            <div className="col-md-6">
+            <div className="col-md-6 col-lg-12">
               <div className="box-prof">
                 <div className="head-box-prof d-flex justify-content-between">
                   <h6 className="my-fw-bold">Personal Information</h6>

@@ -30,7 +30,7 @@ export default function MyCourses() {
   if (isLoading) return <Loading />;
 
   return error ? (
-    <h1 className=" text-center my-fw-bold mt-5">
+    <h1 className=" text-center my-fw-bold mt-5 text-white">
       {error.response.data}
     </h1>
   ) : (
@@ -51,7 +51,7 @@ export default function MyCourses() {
                   >
                     <div className="course-desc rounded">
                       <div className="head-course d-flex justify-content-between position-absolute w-100 p-2">
-                        <span className="num-hours bg-grdient p-1 rounded">
+                        <span className="num-hours bg-grdient p-1 rounded ">
                           {course.totalHouers} h
                         </span>
                         <span className="price bg-grdient p-1 rounded">

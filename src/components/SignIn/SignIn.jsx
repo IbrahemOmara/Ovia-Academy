@@ -77,7 +77,7 @@ export default function SignIn() {
       {/* class=  srcSet */}
       <section className="sign-in sign-up d-flex align-items-center justify-content-center">
         <div className="bg-sign-up">
-          <img src={bg} className="w-100 h-100 object-fit-fill" />
+          {/* <img src={bg} className="w-100 h-100 object-fit-fill" /> */}
         </div>
         <div className="container my-5" >
           <div className="bg-form p-4" >
@@ -179,7 +179,7 @@ export default function SignIn() {
                         {btnLoading ? (
                           <BtnLoading color={"#f5e5c7"} />
                         ) : (
-                          "Sign In"
+                          "Log In"
                         )}
                       </button>
                     </div>

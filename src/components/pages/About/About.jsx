@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseURL } from "../../../utils/baseURL";
 import TLpic from "../../../assets/Ovia-logo/TeamLeader.png"
-import CEOpic from "../../../assets/Ovia-logo/CEO.png"
+import CEOpic from "../../../assets/Ovia-logo/CEO.jpg"
 import coursePic from "../../../assets/cources/digitalMarkting.jpeg"
 
 export default function About() {
@@ -252,30 +252,33 @@ export default function About() {
             </Row>
 
             {/* Team */}
-            <Row className="mt-5">
-              <Col>
-                <h3 className="text-center">Meet Our Team</h3>
-                <p className="text-muted text-center">
-                  Meet the people driving your success.
-                </p>
-              </Col>
-            </Row>
-            <Row className="text-center justify-content-center">
-              {team.map((member, idx) => (
-                <Col md={6} lg={3} key={idx} className="mb-4 team">
-                  <Card className="shadow-sm team-card h-100">
-                    <Card.Img
-                      variant="top"
-                      src={member.img}
-                      alt={member.name}
-                    />
-                    <Card.Body>
-                      <h5>{member.name}</h5>
-                      <p className="text-muted">{member.role}</p>
-                    </Card.Body>
-                  </Card>
+            <Row className="team-sec">
+              <Row className="mt-5">
+                <Col>
+                  <h3 className="text-center">Meet Our Team</h3>
+                  <p className="text-muted text-center">
+                    Meet the people driving your success.
+                  </p>
                 </Col>
-              ))}
+              </Row>
+              <Row className="text-center justify-content-center team">
+                {team.map((member, idx) => (
+                  <Col md={6} lg={3} key={idx} className="mb-4 ">
+                    <Card className=" team-card h-100">
+                      <Card.Img
+                    
+                        variant="top"
+                        src={member.img}
+                        alt={member.name}
+                      />
+                      <Card.Body className="mt-3">
+                        <h5>{member.name}</h5>
+                        <p className="text-muted">{member.role}</p>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
             </Row>
 
             {/* Testimonials */}

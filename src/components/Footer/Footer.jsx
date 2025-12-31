@@ -51,7 +51,7 @@ export default function Footer() {
                 <h3>Contacts</h3>
                 <ul className="list-unstyled d-flex flex-column gap-2 mt-4">
                   <li>
-                    <i className="fa-solid fa-phone me-2"></i> +2010
+                    <i className="fa-solid fa-phone me-2"></i> +20 155 297 4582
                   </li>
                   <li>
                     <i className="fa-solid fa-envelope me-2"></i>{" "}
@@ -59,7 +59,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <i className="fa-solid fa-globe me-2"></i>{" "}
-                    www.ovia.com
+                    https://ovia.nasatechnology.net/
                   </li>
                 </ul>
               </div>

@@ -1,5 +1,7 @@
 .sign-up {
   padding: 50px 200px;
+  background-color: #000000;
+  height: 100vh;
 }
 
 .bg-sign-up {
@@ -8,7 +10,7 @@
   left: 0;
   width: 100%;
   z-index: -1;
-  background-color: #0000 !important;
+  background-color: #fa0000 !important;
 }
 
 .sign-up-content .header-form .row{

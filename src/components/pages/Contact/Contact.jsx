@@ -10,24 +10,34 @@ const Contact = () => {
           <h2 className="section-title my-fw-bolder text-main mb-4 text-center">
             Contact Us
           </h2>
-          <p className="text-center mb-5 text-muted mx-auto">
+          <p className="text-center mb-5  mx-auto text-white">
             Have a question or need help? Our support team is available 24/7.
           </p>
           <Row className="g-5">
             <Col md={6}>
               <Form onSubmit={(e) => e.preventDefault()}>
-                <Form.Group controlId="name" className="mb-3">
-                  <Form.Label>Your Name</Form.Label>
+                <Form.Group controlId="name" className="mb-3 ">
+                  <Form.Label className="text-white">Your Name</Form.Label>
                   <Form.Control type="text" placeholder="Enter your name" />
                 </Form.Group>
 
                 <Form.Group controlId="email" className="mb-3">
-                  <Form.Label>Email Address</Form.Label>
+                  <Form.Label className="text-white">Email Address</Form.Label>
                   <Form.Control type="email" placeholder="Enter your email" />
                 </Form.Group>
 
+                <Form.Group controlId="phone" className="mb-3">
+                  <Form.Label className="text-white">Phone Number</Form.Label>
+                  <Form.Control
+                        type="tel"
+                        
+                        placeholder="01***********"
+                        maxLength={11}
+                  />
+                </Form.Group>
+
                 <Form.Group controlId="message" className="mb-4">
-                  <Form.Label>Your Message</Form.Label>
+                  <Form.Label className="text-white">Your Message</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={5}
@@ -48,7 +58,7 @@ const Contact = () => {
                   <strong>Email:</strong> oviaproject2025@gmail.com
                 </p>
                 <p>
-                  <strong>Phone:</strong> +20 123 456 789
+                  <strong>Phone:</strong> +20 155 297 4582
                 </p>
                 <p>
                   <strong>Support Hours:</strong> 25/9

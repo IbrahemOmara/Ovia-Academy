@@ -18,14 +18,14 @@
 
 /* ------------------- */
 :root {
-  --mainColor: #e7b621;
+  --mainColor: #c2a24d;
   --mainColorRgb: 211, 148, 44;
   --mainColorLight: #182e12;
   --btnBgColor: #182e12;
   /* Secondary (أزرق) */
-  --secondColor: #c59846;
-  --secondColorDark: #23211a;
-  --secondColorLight: #f5e5c7;
+  --secondColor: #9e8437;
+  --secondColorDark: #000000;
+  --secondColorLight: #e6d28a;
   --secondColorRgb: 61, 139, 253;
 
   /* Backgrounds */
@@ -43,7 +43,7 @@ body {
 
   height: 100%;
   font-family: "Almarai-Light";
-  background-color: var(--bg-main-color);
+  background-color: var(--secondColorDark);
   overflow-x: hidden;
   position: relative;
   z-index: 0;
@@ -84,8 +84,8 @@ a {
 .bg-grdient {
   background-image: linear-gradient(
     to left,
-    #d3942c,
-    var(--secondColor),
+    var(--mainColor),
+    var(--secondColorLight),
     var(--secondColor)
   );
   color: #000000 !important;

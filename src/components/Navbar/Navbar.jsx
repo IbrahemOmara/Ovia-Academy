@@ -144,7 +144,7 @@ export default function Navbar() {
                       aria-current="page"
                       to="/sign-in"
                     >
-                      Sign in
+                      Log In
                     </Link>
                   </li>
                   <li className="nav-item">

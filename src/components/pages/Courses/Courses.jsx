@@ -44,7 +44,7 @@ export default function Courses() {
 
   return (
     <div className="container py-5 mt-5">
-      <h2 className="text-center mb-5 mt-5">Featured Courses</h2>
+      <h2 className="text-center mb-5 mt-5 text-white">Featured Courses</h2>
       <div className="row g-4">
         {courses.map((course) => (
           <div key={course.id} className="col-sm-6 col-md-4 col-lg-4">

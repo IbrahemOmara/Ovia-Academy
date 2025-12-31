@@ -50,23 +50,39 @@
 }
 
 /* Team Cards */
+.team-sec{
+  background-color: var(--secondColorLight);
 
+}
 .team{
   padding: 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  width: 100%;
 }
 .team-card{
   border-radius: 0px;
   background-color: var(--secondColorLight);
-  color: var(--secondColor);
-  border-left: solid .5px var(--mainColor);
+  align-items: center;
+  display: flex;
+}
+.team-card:hover{
+box-shadow: none;
+
 }
 
 .team-card img {
-  height: 220px;
   object-fit: fill;
-  border-radius: 0;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  
 }
 
+.team-card h5{
+  color: var(--secondColorDark);
+}
 
 /* Core Values */
 .list-group-item {

@@ -152,7 +152,7 @@ export default function DashMeetings() {
                     className="d-flex align-items-center justify-content-center rounded-4 overflow-hidden shadow border"
                     style={{ height: "80vh" }}
                   >
-                    <h5 className="text-center" >No Meeting Now</h5>
+                    <h5 className="text-center text-white" >No Meeting Now</h5>
                   </div>
                 )}
               </div>
@@ -195,7 +195,7 @@ export default function DashMeetings() {
                   </div>
                 </div>
               ) : (
-                <div className="card-meeting py-4 px-4 bg-body rounded-3 shadow-light h-100 ">
+                <div className="card-meeting py-4 px-4 bg-body rounded-3 shadow-light h-100 text-white ">
                   <h3>No Meeting Create!</h3>
                 </div>
               )}

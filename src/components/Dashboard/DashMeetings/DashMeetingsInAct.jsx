@@ -141,7 +141,7 @@ export default function DashMeetingsInAct() {
                     className="d-flex align-items-center justify-content-center rounded-4 overflow-hidden shadow border"
                     style={{ height: "80vh" }}
                   >
-                    <h5 className="text-center">No Meeting Now</h5>
+                    <h5 className="text-center text-white">No Meeting Now</h5>
                   </div>
                 )}
               </div>

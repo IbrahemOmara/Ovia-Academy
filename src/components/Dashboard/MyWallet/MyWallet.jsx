@@ -145,7 +145,7 @@ export default function MyWallet() {
                 <div className="point-request">
                   <label
                     htmlFor="tokenValue"
-                    className="form-label  my-fw-bold"
+                    className="form-label  my-fw-bold text-white"
                   >
                     Piont Request
                   </label>
@@ -177,15 +177,15 @@ export default function MyWallet() {
                 </div>
               </div>
               <div className="col-md-4 mt-4 pt-2 ">
-                <button type="submit" className="btn bg-grdient py-2 border-0">
+                <button type="submit" className="btn bg-grdient py-2 border-0 ">
                   Request Points
                 </button>
               </div>
             </div>
             <div className="row mt-3">
               <div className="col-md-8">
-                <h6 className="fw-bold fs-5 ">Code</h6>
-                <div className="show-code border p-2 rounded-3 code  ">
+                <h6 className="fw-bold fs-5 text-white">Code</h6>
+                <div className="show-code border p-2 rounded-3 code  text-white">
                   {code}
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function MyWallet() {
                 aria-labelledby="unPaid-tab"
                 tabIndex={0}
               >
-                <h6 className="my-fw-bold ">
+                <h6 className="my-fw-bold text-white ">
                   Total Price : {totalPriceUnPaid || 0}
                 </h6>
                 <div className="table-responsive show-history-piont rounded-3 ">
@@ -292,7 +292,7 @@ export default function MyWallet() {
                 aria-labelledby="paid-tab"
                 tabIndex={0}
               >
-                <h6 className="my-fw-bold ">
+                <h6 className="my-fw-bold text-white">
                   Total Price : {totalPricePaid || 0}
                 </h6>
                 <div className="table-responsive show-history-piont rounded-3 ">

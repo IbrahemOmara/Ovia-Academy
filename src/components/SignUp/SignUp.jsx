@@ -151,7 +151,7 @@ export default function SignUp() {
       {loading ? <Loading /> : ""}
       <section className="sign-up" id="signUp">
         <div className="bg-sign-up">
-          <img src={bg} className="w-100 h-100 object-fit-fill" />
+          {/* <img src={bg} className="w-100 h-100 object-fit-fill" />*/}
         </div>
         <div className="container">
           <div className="bg-form sign-up-content">
@@ -388,7 +388,7 @@ export default function SignUp() {
               </div>
               <div className="col-12 col-md-4">
                 <Link className="btn btn-sign-up not-active" to="/sign-in">
-                  Sign in
+                  Log In
                 </Link>
               </div>
             </div>
