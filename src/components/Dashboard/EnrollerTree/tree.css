@@ -111,7 +111,7 @@
   left: 50%;
   width: 2px;
   height: 30px;
-  background-color: #a48cf0;
+  background-color: var(--secondColorLight);
   z-index: 0;
 }
 .tree-node-s::before {
@@ -121,7 +121,7 @@
   left: 50%;
   width: 2px;
   height: 30px;
-  background-color: #a48cf0;
+  background-color: var(--secondColorLight);
   z-index: 0;
 }
 
@@ -140,7 +140,7 @@
   top: -30px;
   height: 2px;
   width: 100%;
-  background-color: #a48cf0;
+  background-color: var(--secondColorLight);
   left: 0;
 }
 
@@ -162,7 +162,7 @@
   top: -30px;
   height: 2px;
   width: 80%;
-  background-color: #a48cf0;
+  background-color: var(--secondColorLight);
   
 }
 .child-line {
@@ -176,7 +176,7 @@
   transform: translateX(-50%);
   width: 2px;
   height: 30px;
-  background-color: #a48cf0;
+  background-color: var(--secondColorLight);
   z-index: 1;
 }
 
@@ -194,7 +194,7 @@
   z-index: 1000;
 }
 .popup-content {
-  background: #a48cf0;
+  background: var(--secondColor);
   border-radius: 18px;
   padding: 32px 40px 24px 40px;
   color: #fff;
@@ -260,7 +260,7 @@
   padding: 7px 24px;
   font-size: 15px;
   background: #fff;
-  color: #a48cf0;
+  color: #000000;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -268,8 +268,8 @@
   transition: background 0.2s, color 0.2s;
 }
 .popup-close-btn:hover {
-  background: #7c5fe6;
-  color: #fff;
+  background: var(--secondColorLight);
+  
 }
 
 /* --- جدول بيانات البوب أب --- */
@@ -306,7 +306,7 @@
 .node-box-circle {
   
   border-radius: 5%;
-  box-shadow: 0 4px 16px #a48cf088;
+  
   width: 85px;
   height: 85px;
   display: flex;
@@ -316,15 +316,15 @@
   cursor: pointer;
   margin: 0 auto;
   position: relative;
-  border: 2px solid #7c5fe6;
+  border: 2px solid var(--mainColor);
   
   transition: box-shadow 0.2s, border 0.2s;
 }
 
 .node-box-circle:hover {
-  box-shadow: 0 4px 16px #a48cf088;
+  box-shadow: 0 4px 16px var(--secondColorLight);
   box-shadow: 0 0 10px 0px var(--mainColor);
-  border: 1px solid #f0dc8c;
+  border: 1px solid #ffffff;
 }
 
 .node-box-circle-s {
@@ -340,13 +340,13 @@
   cursor: pointer;
   margin: 0 auto;
   position: relative;
-  border: 3px solid #a48cf0;
+  border: 3px solid var(--mainColor);
   transition: box-shadow 0.2s, border 0.2s;
 }
 
 .node-box-circle-s:hover {
-  box-shadow: 0 4px 16px #a48cf088;
-  border: 3px solid #7c5fe6;
+  box-shadow: 0 4px 16px var(--secondColorLight);
+  border: 3px solid var(--secondColor);
 }
 .avatar-circle {
   height: 50px;
@@ -354,7 +354,7 @@
   overflow: hidden;
   margin-top: 5px;
   margin-bottom: 4px;
-  border: 2px solid #a48cf0;
+  border: 2px solid var(--secondColorLight);
   background: #f6f6fa;
   display: flex;
   align-items: center;
@@ -367,13 +367,13 @@
 }
 .node-id {
   font-size: 10px;
-  color: var(--mainColor);
+  color: #fff;
   margin-top: 0px;
   font-weight: 600;
 }
 .node-name {
   font-size: 12px;
-  color: var(--mainColor);
+  color: #fff;
   font-weight: bold;
   margin-top: 1px;
 }
@@ -384,7 +384,7 @@
   overflow: hidden;
   margin-top: 5px;
   margin-bottom: 4px;
-  border: 2px solid #a48cf0;
+  border: 2px solid var(--secondColor);
   background: #f6f6fa;
   display: flex;
   align-items: center;
@@ -397,13 +397,13 @@
 }
 .node-id-s {
   font-size: 10px;
-  color: var(--mainColor);
+  color: #fff;
   margin-top: 0px;
   font-weight: 600;
 }
 .node-name-s {
   font-size: 12px;
-  color: var(--mainColor);
+  color: #fff;
   font-weight: bold;
   margin-top: 1px;
 }
@@ -412,15 +412,15 @@
   margin-top: 20px;
   padding: 10px 25px;
   font-size: 14px;
-  background-color: #a48cf0;
-  color: white;
+  background-color: var(--mainColor);
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 .back-to-root-btn:hover {
-  background-color: #7c5fe6;
+  background-color: var(--secondColorLight);
 }
 
 .fixed-root-btn {
@@ -436,8 +436,8 @@
 
 .arrow-down-btn {
   background: #fff;
-  color: #7c5fe6;
-  border: 2px solid #a48cf0;
+  color: var(--secondColor);
+  border: 2px solid var(--secondColorLight);
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -453,9 +453,9 @@
 }
 
 .arrow-down-btn:hover {
-  background: #a48cf0;
+  background: var(--secondColorLight);
   color: #fff;
-  border: 2px solid #7c5fe6;
+  border: 2px solid var(--secondColor);
 }
 
 @media (max-width: 768px) {

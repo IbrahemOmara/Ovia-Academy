@@ -100,6 +100,13 @@ a {
   font-size: 0.9rem;
 }
 
+.fs-larg {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+
+}
+
+
 .cursor-pointer {
   cursor: pointer;
 }

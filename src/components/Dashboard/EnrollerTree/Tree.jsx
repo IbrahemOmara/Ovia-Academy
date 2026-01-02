@@ -19,19 +19,38 @@ const NetworkTree = () => {
   const rootIdRef = useRef(null);
   const navigate = useNavigate();
 
+  /* ---------------- Helpers ---------------- */
+
+  const checkNetworkConnection = () => {
+    if (!navigator.onLine) {
+      setError("No internet connection");
+      return false;
+    }
+    return true;
+  };
+
   const getRootId = () => {
-    const authData = localStorage.getItem("dataAuth");
-    if (!authData) return null;
-    const auth = JSON.parse(authData);
+    const raw = localStorage.getItem("dataAuth");
+    if (!raw) return null;
+    const auth = JSON.parse(raw);
     return auth.customerAttributeId || auth.referId || null;
   };
 
-  const fetchNetworkData = async (ParentId, retryCount = 0) => {
-    if (!ParentId) return;
-
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
+  const getAuthUser = () => {
+    try {
+      const raw = localStorage.getItem("dataAuth");
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
     }
+  };
+
+  /* ---------------- Fetch Network ---------------- */
+
+  const fetchNetworkData = async (ParentId, retryCount = 0) => {
+    if (!ParentId || !checkNetworkConnection()) return;
+
+    if (abortControllerRef.current) abortControllerRef.current.abort();
 
     setLoading(true);
     setError(null);
@@ -39,6 +58,10 @@ const NetworkTree = () => {
     try {
       abortControllerRef.current = new AbortController();
       const signal = abortControllerRef.current.signal;
+
+      const timeoutId = setTimeout(() => {
+        abortControllerRef.current?.abort();
+      }, 10000);
 
       const response = await fetch(
         `${API_URL}?ParentId=${ParentId}`,
@@ -52,54 +75,77 @@ const NetworkTree = () => {
         }
       );
 
+      clearTimeout(timeoutId);
+
       if (!response.ok) {
-        throw new Error(`Error ${response.status}`);
+        if (response.status === 404) {
+          setData(prev => ({
+            ...prev,
+            [ParentId]: {
+              ...(prev[ParentId] || { id: ParentId, name: "Unknown" }),
+              children: { left: null, right: null },
+              hasChildren: false,
+            },
+          }));
+          return;
+        }
+        setError(`Error ${response.status}`);
+        return;
       }
 
-      const result = await response.json(); // 👈 الريسبونس Array مباشر
+      const result = await response.json(); // Array
 
-      const dataUser = JSON.parse(localStorage.dataAuth);
-      const newData = {};
+      setData(prev => {
+        const updated = { ...prev };
+        const authUser = getAuthUser();
+        const isRoot = ParentId === rootIdRef.current;
+        const prevParent = prev[ParentId];
 
-      // إنشاء الأب (Parent)
-      newData[ParentId] = {
-        id: ParentId,
-        name: dataUser.name,
-        email: dataUser.email,
-        mobile: dataUser.mobile,
-        children: {
-          left: null,
-          right: null,
-        },
-        hasChildren: result.length > 0,
-      };
+        // Parent
+        const rootInfo =
+          isRoot && !prevParent && authUser
+            ? {
+                id: ParentId,
+                name: authUser.name || authUser.fullName || "Root",
+                email: authUser.email || "",
+                mobile: authUser.mobile || authUser.phone || "",
+              }
+            : null;
 
-      // إنشاء الأبناء (Binary)
-      result.forEach((item) => {
-        const childId = item.childId;
-
-        newData[childId] = {
-          id: childId,
-          name: item.childName,
-          email: item.childEmail,
-          mobile: item.mobile,
-          children: {
-            left: null,
-            right: null,
-          },
-          hasChildren: true,
+        updated[ParentId] = {
+          ...(prevParent || rootInfo || { id: ParentId, name: "Unknown" }),
+          children: prevParent?.children || { left: null, right: null },
+          hasChildren: result.length > 0,
         };
 
-        if (item.handSide === "Left") {
-          newData[ParentId].children.left = childId;
-        } else if (item.handSide === "Right") {
-          newData[ParentId].children.right = childId;
-        }
+        // Children
+        result.forEach(item => {
+          const childId = item.childId;
+
+          updated[childId] = {
+            ...(prev[childId] || {}),
+            id: childId,
+            name: item.childName,
+            email: item.childEmail,
+            mobile: item.mobile,
+            children: prev[childId]?.children || { left: null, right: null },
+            hasChildren: null, // unknown until expanded
+          };
+
+          if (item.handSide === "Left") {
+            updated[ParentId].children.left = childId;
+          }
+          if (item.handSide === "Right") {
+            updated[ParentId].children.right = childId;
+          }
+        });
+
+        return updated;
       });
 
-      setData((prev) => ({ ...prev, ...newData }));
-      setExpandedNodes((prev) => new Set(prev).add(ParentId));
+      setExpandedNodes(prev => new Set(prev).add(ParentId));
       if (ParentId !== rootIdRef.current) setIsChildView(true);
+
     } catch (err) {
       if (retryCount < 2) {
         setTimeout(() => fetchNetworkData(ParentId, retryCount + 1), 1500);
@@ -111,6 +157,8 @@ const NetworkTree = () => {
     }
   };
 
+  /* ---------------- Effects ---------------- */
+
   useEffect(() => {
     const rootId = getRootId();
     if (rootId) {
@@ -118,11 +166,7 @@ const NetworkTree = () => {
       fetchNetworkData(rootId);
     }
 
-    return () => {
-      if (abortControllerRef.current) {
-        abortControllerRef.current.abort();
-      }
-    };
+    return () => abortControllerRef.current?.abort();
   }, []);
 
   useEffect(() => {
@@ -132,21 +176,24 @@ const NetworkTree = () => {
     }
   }, [resetFlag]);
 
+  /* ---------------- Actions ---------------- */
+
   const toggleNode = async (nodeId) => {
     if (expandedNodes.has(nodeId)) {
-      const s = new Set(expandedNodes);
-      s.delete(nodeId);
-      setExpandedNodes(s);
+      setExpandedNodes(prev => {
+        const s = new Set(prev);
+        s.delete(nodeId);
+        return s;
+      });
     } else {
       await fetchNetworkData(nodeId);
     }
   };
 
-  const handleNodeClick = (node) => {
-    setSelectedNode(node);
-  };
-
+  const handleNodeClick = (node) => setSelectedNode(node);
   const closePopup = () => setSelectedNode(null);
+
+  /* ---------------- Render Tree ---------------- */
 
   const renderTree = (nodeId) => {
     const node = data[nodeId];
@@ -165,7 +212,7 @@ const NetworkTree = () => {
 
         <div className="node-name">{node.name}</div>
 
-        {node.hasChildren && !isExpanded && (
+        {node.hasChildren !== false && !isExpanded && (
           <div className="arrow-down-container">
             <button
               className="arrow-down-btn"
@@ -196,13 +243,14 @@ const NetworkTree = () => {
     );
   };
 
+  /* ---------------- JSX ---------------- */
+
   const rootNodeId = rootIdRef.current;
   const allowedKeys = ["email", "mobile"];
 
   return (
     <div className="tree-container">
       {error && <div className="error-box">{error}</div>}
-
       {loading && <p style={{ textAlign: "center" }}>Loading...</p>}
 
       {!loading && rootNodeId && data[rootNodeId] && (

@@ -1,8 +1,9 @@
 .my-profile .box-prof {
-  padding: 20px;
+
   color: var(--mainColor);
   /* height: 530px; */
   position: relative;
+  
 }
 
 .box-prof .border-img,

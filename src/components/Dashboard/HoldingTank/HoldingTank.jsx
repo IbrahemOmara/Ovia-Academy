@@ -240,7 +240,7 @@ export default function HoldingTank() {
                               className="form-control text-black"
                               id="parentId"
                             />
-                            <div className="text-main fw-bolder fs-small">
+                            <div className="text-main fw-bolder fs-larg mt-2" style={{textAlign:"center", backgroundColor:"#2cb905d0"}}>
                               {nameOfParent}
                             </div>
                           </div>
