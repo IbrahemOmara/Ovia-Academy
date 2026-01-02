@@ -194,12 +194,12 @@
   z-index: 1000;
 }
 .popup-content {
-  background: var(--secondColor);
+  background: #000000;
   border-radius: 18px;
   padding: 32px 40px 24px 40px;
   color: #fff;
   min-width: 320px;
-  box-shadow: 0 4px 24px #8882;
+  box-shadow: 0 0 10px 0 var(--mainColor);
   text-align: center;
   position: relative;
 }
@@ -209,7 +209,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 10px auto;
-  border: 3px solid #fff;
+  border: 3px solid var(--secondColorLight);
   background: #f6f6fa;
   display: flex;
   align-items: center;
