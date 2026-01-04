@@ -23,15 +23,25 @@ export default function SignUp() {
   // const [countriesName,]
 
   async function getAllCountries() {
-  await axios
-    .get(`${baseURL}/User/GeTAllCountries`)
-    .then(({ data }) => {
-      setCountries(data.data || []); // ✅ الحل
-    })
-    .catch((error) => {
+    try {
+      const res = await axios.get(`${baseURL}/User/GeTAllCountries`);
+
+      console.log("FULL RESPONSE 👉", res.data);
+
+      // 🔴 جرّب واحد من دول (واحد فيهم هيظبط)
+      const list =
+        res.data?.data ||
+        res.data?.countries ||
+        res.data?.result ||
+        [];
+
+      setCountries(list);
+    } catch (error) {
       console.log(error.response?.data?.message || error.message);
-    });
-}
+    }
+  }
+
+
 
   //search about sponsor id to register
   async function searchSponserId(id) {
@@ -122,6 +132,17 @@ export default function SignUp() {
       sendDataToApi(values);
     },
   });
+  
+  
+  useEffect(() => {
+    if (countries.length > 0 && !register.values.countryId) {
+      const defaultCountry = countries.find(c => c.id === 63);
+      if (defaultCountry) {
+        register.setFieldValue("countryId", defaultCountry.id);
+      }
+    }
+  }, [countries]);
+
 
   //fuction search and allow form to submit
   const search = async (sponsorId) => {
@@ -320,23 +341,21 @@ export default function SignUp() {
                       Your Country
                     </label>
                     <select
-                      onChange={register.handleChange}
-                      className="form-select"
                       name="countryId"
                       id="countryId"
+                      className="form-select"
+                      value={register.values.countryId}
+                      onChange={register.handleChange}
+                      disabled={disabled.includes("disabled")}
                     >
-                      {countries.map((country) => {
-                        return (
-                          <option
-                            key={country.id}
-                            value={country.id}
-                            selected={country.id == 63}
-                          >
+                        <option value="">Select Country</option>
+
+                        {countries.map((country) => (
+                          <option key={country.id} value={country.id}>
                             {country.name}
                           </option>
-                        );
-                      })}
-                    </select>
+                        ))}
+                      </select>
                   </div>
                 </div>
                 <div className={`${disabled} col-md-5 offset-md-1 pe-4`}>
@@ -394,6 +413,7 @@ export default function SignUp() {
             </div>
           </div>
         </div>
+        
       </section>
     </>
   );

@@ -6,7 +6,7 @@ export default function NotFound() {
     <>
       <div className="container mt-5 pt-5">
        <div className="content text-center text-white" >
-            <img style={{height:'300px'}} className='d-block m-auto' src={notFound} alt="Not Found" />
+            <img style={{height:'300px'}} className='d-block m-auto mt-5' src={notFound} alt="Not Found" />
             <h1>Page Not Found</h1>
             <p>The page you are looking for could not be found.</p>
        </div>

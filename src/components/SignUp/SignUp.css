@@ -135,6 +135,13 @@
 
 }
 
+.form-select {
+  color: #fff !important;
+  background-color: #111 !important;
+  z-index: 9 !important;
+}
+
+
 @media (max-width: 1600px) {
   .sign-up {
     position: relative;

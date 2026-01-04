@@ -5,10 +5,13 @@ import { FaChalkboardTeacher, FaVideo } from "react-icons/fa";
 import { MdColorLens } from "react-icons/md";
 import "./WhatWeOffer.css";
 import icon1 from  '../../assets/Gif/advertising.gif'
-import icon2 from  '../../assets/Gif/digital-art.gif'
-import icon3 from  '../../assets/Gif/personal-trainer.gif'
-import icon4 from  '../../assets/Gif/video-editing.gif'
-import icon5 from  '../../assets/Gif/video.gif'
+import icon2 from  '../../assets/Gif/artificial-intelligence.gif'
+import icon3 from  '../../assets/Gif/trading.gif'
+import icon4 from  '../../assets/Gif/business-plan.gif'
+import icon5 from  '../../assets/Gif/content-creator.gif'
+import icon6 from  '../../assets/Gif/online-shopping.gif'
+import icon7 from  '../../assets/Gif/soft-skills.gif'
+import icon8 from  '../../assets/Gif/graphic-designer.gif'
 
 const items = [
   {
@@ -17,24 +20,39 @@ const items = [
     icon: icon1,
   },
   {
+    title: "Ai Track",
+    desc: "",
+    icon: icon2,
+  },
+  {
+    title: "Trading Track",
+    desc: "",
+    icon: icon3,
+  },
+  {
+    title: "Business & Entrepreneurship Track",
+    desc: "",
+    icon: icon4,
+  },
+  {
     title: "Content Creation Track",
     desc: "",
     icon: icon5,
   },
   {
-    title: "Graphic Design Track",
+    title: "Sales Track",
     desc: "",
-    icon: icon2,
+    icon: icon6,
   },
   {
-    title: "Video Editing Track",
+    title: "Soft Skills & Personal Development Track",
     desc: "",
-    icon: icon4,
+    icon: icon7,
   },
   {
-    title: "Training Of Trainer (TOT) Track",
+    title: "Graphic Design",
     desc: "",
-    icon: icon3,
+    icon: icon8,
   },
 ];
 
