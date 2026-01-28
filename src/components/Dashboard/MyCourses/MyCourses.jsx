@@ -54,7 +54,7 @@ export default function MyCourses() {
                         <span className="num-hours bg-grdient p-1 rounded ">
                           {course.totalHouers} h
                         </span>
-                        <span className="price bg-grdient p-1 rounded">
+                        <span className=" bg-grdient p-1 rounded" style={{fontSize:"1.5em"}}>
                           ${course.price}
                         </span>
                       </div>

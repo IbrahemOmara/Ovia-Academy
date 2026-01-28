@@ -34,8 +34,8 @@ export default function Cart() {
     <>
       <section className="cart min-vh-100 py-3" id="cart">
         <div className="container">
-          <h5 className=" pb-2 my-fw-bold border-bottom w-50 mt-5">Your Cart</h5>
-          <p className="mt-3">
+          <h5 className=" pb-2 my-fw-bold border-bottom w-50 mt-5 text-white">Your Cart</h5>
+          <p className="mt-3 text-white">
             You have {cart_packages.length} item in your cart
           </p>
           <div className="row  gy-3">
@@ -43,7 +43,7 @@ export default function Cart() {
               <div className="row gy-3">
                 {cart_packages.map((pkg) => {
                   return (
-                    <div className="col-12" key={pkg.id}>
+                    <div className="col-12 text-white" key={pkg.id}>
                       <div className="cart-box">
                         <div className="img-cart">
                           <img
@@ -66,7 +66,7 @@ export default function Cart() {
                 })}
               </div>
             </div>
-            <div className="col-md-5">
+            <div className="col-md-5 text-white">
               <div className="cart-summary p-3 d-flex flex-column align-items-center">
                 <h5 className="my-fw-bold w-100">Cart Summary</h5>
                 <div className="row w-100 border-bottom mt-3">

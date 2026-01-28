@@ -131,7 +131,7 @@ export default function Pay() {
     <>
       <section className="pay" id="pay">
         <div className="container">
-          <div className="row ">
+          <div className="row text-white">
             <div className="col-md-6 col-lg-5 m-auto ">
               <div className="box-pay ">
                 <div className="head-pay d-flex align-items-center gap-3">
@@ -164,7 +164,7 @@ export default function Pay() {
                       <div className="token">
                         <label
                           htmlFor="token"
-                          className="form-label fs-5 fw-bold"
+                          className="form-label fs-5 fw-bold text-white"
                         >
                           Token
                         </label>

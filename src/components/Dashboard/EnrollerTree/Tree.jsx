@@ -82,7 +82,7 @@ const NetworkTree = () => {
           setData(prev => ({
             ...prev,
             [ParentId]: {
-              ...(prev[ParentId] || { id: ParentId, name: "Unknown" }),
+              ...(prev[ParentId] || { id: ParentId, name: "Unknow" }),
               children: { left: null, right: null },
               hasChildren: false,
             },
