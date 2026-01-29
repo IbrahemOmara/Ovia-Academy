@@ -93,7 +93,7 @@ const NetworkTree = () => {
         return;
       }
 
-      const result = await response.json(); // Array
+      const result = await response.json();
 
       setData(prev => {
         const updated = { ...prev };
@@ -101,7 +101,6 @@ const NetworkTree = () => {
         const isRoot = ParentId === rootIdRef.current;
         const prevParent = prev[ParentId];
 
-        // Parent
         const rootInfo =
           isRoot && !prevParent && authUser
             ? {
@@ -118,9 +117,11 @@ const NetworkTree = () => {
           hasChildren: result.length > 0,
         };
 
-        // Children
         result.forEach(item => {
           const childId = item.childId;
+
+          // 🔥 حماية من self reference
+          if (!childId || childId === ParentId) return;
 
           updated[childId] = {
             ...(prev[childId] || {}),
@@ -129,7 +130,7 @@ const NetworkTree = () => {
             email: item.childEmail,
             mobile: item.mobile,
             children: prev[childId]?.children || { left: null, right: null },
-            hasChildren: null, // unknown until expanded
+            hasChildren: null,
           };
 
           if (item.handSide === "Left") {
@@ -193,9 +194,12 @@ const NetworkTree = () => {
   const handleNodeClick = (node) => setSelectedNode(node);
   const closePopup = () => setSelectedNode(null);
 
-  /* ---------------- Render Tree ---------------- */
+  /* ---------------- Render Tree (SAFE) ---------------- */
 
-  const renderTree = (nodeId) => {
+  const renderTree = (nodeId, visited = new Set()) => {
+    if (visited.has(nodeId)) return null;
+    visited.add(nodeId);
+
     const node = data[nodeId];
     if (!node) return null;
 
@@ -229,11 +233,11 @@ const NetworkTree = () => {
               (childId, idx) =>
                 childId && (
                   <div
-                    key={childId}
+                    key={`${nodeId}-${childId}`}
                     className={`child-line ${idx === 0 ? "left" : "right"}`}
                   >
                     <div className="line"></div>
-                    {renderTree(childId)}
+                    {renderTree(childId, new Set(visited))}
                   </div>
                 )
             )}
