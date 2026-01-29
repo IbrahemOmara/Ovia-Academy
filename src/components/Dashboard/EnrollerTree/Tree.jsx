@@ -33,7 +33,7 @@ const NetworkTree = () => {
     const raw = localStorage.getItem("dataAuth");
     if (!raw) return null;
     const auth = JSON.parse(raw);
-    return auth.customerAttributeId || auth.referId || null;
+    return auth.customerAttributeId || auth.referId || auth.name || null;
   };
 
   const getAuthUser = () => {
@@ -82,7 +82,7 @@ const NetworkTree = () => {
           setData(prev => ({
             ...prev,
             [ParentId]: {
-              ...(prev[ParentId] || { id: ParentId, name: "Unknow" }),
+              ...(prev[ParentId] || { id: ParentId, name: "Unknown" }),
               children: { left: null, right: null },
               hasChildren: false,
             },
