@@ -33,7 +33,7 @@ const NetworkTree = () => {
     const raw = localStorage.getItem("dataAuth");
     if (!raw) return null;
     const auth = JSON.parse(raw);
-    return auth.customerAttributeId || auth.referId || auth.name || null;
+    return auth.customerAttributeId || auth.referId || null;
   };
 
   const getAuthUser = () => {
@@ -95,16 +95,20 @@ const NetworkTree = () => {
 
       const result = await response.json();
 
+    
+
       setData(prev => {
         const updated = { ...prev };
         const authUser = getAuthUser();
         const isRoot = ParentId === rootIdRef.current;
         const prevParent = prev[ParentId];
 
+        /* -------- Root Node -------- */
         const rootInfo =
           isRoot && !prevParent && authUser
             ? {
                 id: ParentId,
+                referrid: authUser.referrid, // ✅
                 name: authUser.name || authUser.fullName || "Root",
                 email: authUser.email || "",
                 mobile: authUser.mobile || authUser.phone || "",
@@ -117,15 +121,19 @@ const NetworkTree = () => {
           hasChildren: result.length > 0,
         };
 
+        
+
+        /* -------- Children -------- */
         result.forEach(item => {
           const childId = item.childId;
 
-          // 🔥 حماية من self reference
+          // حماية من self reference
           if (!childId || childId === ParentId) return;
 
           updated[childId] = {
             ...(prev[childId] || {}),
             id: childId,
+            referrid: item.referrid, // ✅ الاسم المؤكد
             name: item.childName,
             email: item.childEmail,
             mobile: item.mobile,
@@ -194,7 +202,7 @@ const NetworkTree = () => {
   const handleNodeClick = (node) => setSelectedNode(node);
   const closePopup = () => setSelectedNode(null);
 
-  /* ---------------- Render Tree (SAFE) ---------------- */
+  /* ---------------- Render Tree ---------------- */
 
   const renderTree = (nodeId, visited = new Set()) => {
     if (visited.has(nodeId)) return null;
@@ -211,7 +219,11 @@ const NetworkTree = () => {
           <div className="avatar-circle">
             <img src={DEFAULT_AVATAR} alt="avatar" />
           </div>
-          <div className="node-id">{node.id}</div>
+
+          {/* ✅ referrid بدل id */}
+          <div className="node-id">
+            {node.referrid ||node.id || "-"}
+          </div>
         </div>
 
         <div className="node-name">{node.name}</div>
@@ -250,7 +262,7 @@ const NetworkTree = () => {
   /* ---------------- JSX ---------------- */
 
   const rootNodeId = rootIdRef.current;
-  const allowedKeys = ["email", "mobile"];
+  const allowedKeys = ["referrid", "email", "mobile"];
 
   return (
     <div className="tree-container">
@@ -287,7 +299,11 @@ const NetworkTree = () => {
               <img src={DEFAULT_AVATAR} alt="avatar" />
             </div>
 
-            <div className="popup-id">{selectedNode.id}</div>
+            {/* ✅ referrid في البوب اب */}
+            <div className="popup-id">
+              {selectedNode.referrid}
+            </div>
+
             <div className="popup-name">{selectedNode.name}</div>
 
             <table className="popup-table">

@@ -8,244 +8,233 @@ import Loading from "../../Loading/Loading";
 import { useQuery } from "react-query";
 
 export default function HoldingTank() {
-  const [toggle, setToggle] = useState(true);
-  const [popUp, setPopUp] = useState(null);
-  const [childId, setChildId] = useState(null);
+  const [popUp, setPopUp] = useState("");
+  const [childId, setChildId] = useState("");
   const [handSide, setHandSide] = useState(".");
-  const [dataParent, setDataParent] = useState(null);
+  const [dataParent, setDataParent] = useState({});
   const [left, setLeft] = useState(false);
   const [right, setRight] = useState(false);
   const [nameOfParent, setNameOfParent] = useState("");
 
   const referId = JSON.parse(localStorage.dataAuth).referId;
 
-  /* ---------------- API ---------------- */
+  /* ================= API ================= */
 
-  const getAllHoldingTank = (id) =>
-    axios.get(`${baseURL}/User/GetAllHoldingTank?sponsorId=${id}`);
+  const getAllHoldingTank = async () => {
+    const res = await axios.get(
+      `${baseURL}/User/GetAllHoldingTank?sponsorId=${referId}`
+    );
+    return res.data;
+  };
 
-  const {
-    data: tanks,
-    isLoading: loadingTanks,
-    refetch,
-  } = useQuery(
+  const { data: tanks, isLoading } = useQuery(
     ["getAllHoldingTank", referId],
-    () => getAllHoldingTank(referId),
-    {
-      refetchOnWindowFocus: false,
-    }
+    getAllHoldingTank,
+    { refetchOnWindowFocus: false }
   );
 
-  const checkAboutHisChildren = async (sponsorId) => {
+  const checkAboutHisChildren = async (id) => {
+    setLeft(false);
+    setRight(false);
+
     try {
       const { data } = await axios.get(
-        `${baseURL}/User/CheckAboutHisChildren?sponsorId=${sponsorId}`
+        `${baseURL}/User/CheckAboutHisChildren?sponsorId=${id}`
       );
-
-      setLeft(false);
-      setRight(false);
 
       data.forEach((item) => {
         if (item.handSide === "Left") setLeft(true);
         if (item.handSide === "Right") setRight(true);
       });
 
-      if (data.length === 2)
-        toast.error("Sorry, this parent already has two children");
+      if (data.length === 2) {
+        toast.error("Sorry this parent is full child");
+      } else {
+        if (!left) toast.warning("Choose Left for child");
+        if (!right) toast.warning("Choose Right for child");
+      }
     } catch (error) {
       if (error.response?.data === "Sponsor not have children.") {
+        toast.success("Yes, You can add this parent");
         setLeft(false);
         setRight(false);
-        toast.success("This parent has no children yet");
       }
     }
   };
 
   const getDataSponsorId = async (id) => {
-    const { data } = await axios.get(`${baseURL}/User/${id}`);
-    setDataParent(data);
-    setNameOfParent(data.name);
+    try {
+      const { data } = await axios.get(`${baseURL}/User/${id}`);
+      setDataParent(data);
+      setNameOfParent(data.name);
+    } catch {
+      toast.error("Parent not found");
+    }
   };
 
   const addParentToNewMember = async (values) => {
-    await axios.post(`${baseURL}/User/AddParentToNewMember`, values);
-    toast.success("Successfully added a parent");
+    try {
+      await axios.post(`${baseURL}/User/AddParentToNewMember`, values);
+      toast.success("Successfully added a parent");
+    } catch (error) {
+      toast.error(error.response?.data);
+    }
   };
 
-  /* ---------------- UI Logic ---------------- */
+  /* ================= Handlers ================= */
 
   const togglePop = (id) => {
-    setPopUp(id);
-    setToggle(false);
+    setPopUp((prev) => (prev === id ? "" : id));
     setChildId(id);
-    setHandSide(".");
-    setLeft(false);
-    setRight(false);
-    setNameOfParent("");
-    setDataParent(null);
   };
 
   const closePopUp = () => {
-    setToggle(true);
-    setPopUp(null);
+    setPopUp("");
   };
 
-  const handelSide = (side) => setHandSide(side);
+  const handelSide = (side) => {
+    setHandSide(side);
+  };
 
   const checkParent = async () => {
-    const parentId = addParent.values.parentId;
-
-    if (!parentId) {
-      toast.warning("Please enter Parent ID");
-      return;
-    }
-
-    if (parentId == childId) {
-      toast.error("You cannot add user as a parent to himself");
-      return;
-    }
-
-    await getDataSponsorId(parentId);
-    await checkAboutHisChildren(parentId);
+    if (!addParent.values.parentId) return;
+    await getDataSponsorId(addParent.values.parentId);
+    await checkAboutHisChildren(addParent.values.parentId);
   };
 
-  /* ---------------- Formik ---------------- */
+  /* ================= Formik ================= */
 
   const addParent = useFormik({
     initialValues: {
       parentId: "",
     },
-    onSubmit: async (values, { resetForm }) => {
-      if (!dataParent) {
-        toast.warning("Please search for parent first");
-        return;
-      }
-
-      if (handSide === "." || !handSide) {
-        toast.warning("Please choose Left or Right");
-        return;
-      }
-
-      if ((handSide === "Left" && left) || (handSide === "Right" && right)) {
-        toast.error("This side is already taken");
-        return;
-      }
-
-      const payload = {
+    onSubmit: () => {
+      addParentToNewMember({
         parentId: dataParent.customerAttributeId,
         childId,
         handSide,
-      };
-
-      await addParentToNewMember(payload);
-
-      resetForm();
-      closePopUp();
-      refetch(); // ✅ أنضف حل
+      });
     },
   });
 
-  if (loadingTanks) return <Loading />;
+  if (isLoading) return <Loading />;
 
-  /* ---------------- JSX ---------------- */
+  /* ================= JSX ================= */
 
   return (
     <section className="holding-tank" id="HoldingTank">
       <div className="container">
-        <div className="row fw-bold py-3" style={{ color: "#c59846" }}>
-          <div className="col-2">Name</div>
-          <div className="col-3">Email</div>
-          <div className="col-3">BackOffice ID</div>
-          <div className="col-3">Status</div>
+        <div className="row" style={{ color: "#c59846", padding: "20px 0px" }}>
+          <div className="col-1 d-none d-md-block"></div>
+          <div className="col-2"><h6 className="fw-bold">Name</h6></div>
+          <div className="col-3"><h6 className="fw-bold">Email</h6></div>
+          <div className="col-3"><h6 className="fw-bold">BackOffice ID</h6></div>
+          <div className="col-3"><h6 className="fw-bold">Status</h6></div>
         </div>
 
-        {tanks?.data.map(
-          (item) =>
-            !item.hasParent && (
-              <div
-                key={item.customerAttributeId}
-                className="row align-items-center mt-2 py-3 rounded-3 table-row"
-              >
-                <div className="col-2">{item.name}</div>
-                <div className="col-3">{item.email}</div>
-                <div className="col-3 fw-bold">{item.backOfficeId}</div>
+        {tanks?.map((item) =>
+          !item.hasParent ? (
+            <div
+              key={item.customerAttributeId}
+              className="row fs-small fw-semibold position-relative mt-2 py-3 rounded-3 text-black align-items-center table-row"
+            >
+              <div className="col-1 d-none d-md-block">
+                <i className="fa-solid fa-user text-main"></i>
+              </div>
 
-                <div className="col-3">
-                  {item.status === "Active" && (
-                    <button
-                      className="btn text-main p-0"
-                      onClick={() => togglePop(item.customerAttributeId)}
-                    >
-                      {item.status}
-                    </button>
-                  )}
-                </div>
+              <div className="col-2"><p>{item.name}</p></div>
+              <div className="col-3"><p>{item.email}</p></div>
+              <div className="col-3"><p className="fw-bolder">{item.backOfficeId}</p></div>
 
-                {popUp === item.customerAttributeId && (
-                  <form
-                    className="pop-up shadow-lg rounded-3"
-                    onSubmit={addParent.handleSubmit}
+              <div className="col-3">
+                {item.status === "Active" ? (
+                  <button
+                    onClick={() => togglePop(item.customerAttributeId)}
+                    className="btn border-0 p-0 text-main"
                   >
-                    <button
-                      type="button"
-                      className="btn position-absolute top-0 end-0"
-                      onClick={closePopUp}
-                    >
-                      ✕
-                    </button>
+                    <i
+                      className={`fa-solid fa-${
+                        popUp === item.customerAttributeId
+                          ? "chevron-down"
+                          : "chevron-right"
+                      }`}
+                    ></i>
+                    {item.status}
+                  </button>
+                ) : (
+                  <p>{item.status}</p>
+                )}
+              </div>
 
-                    <h6 className="text-danger fw-bold">Active</h6>
+              {/* ================= POPUP ================= */}
+              <form onSubmit={addParent.handleSubmit}>
+                <div
+                  className={`${
+                    popUp === item.customerAttributeId ? "d-block" : "d-none"
+                  } pop-up rounded-3 shadow-lg`}
+                >
+                  <button
+                    type="button"
+                    onClick={closePopUp}
+                    className="btn position-absolute top-0 end-0"
+                  >
+                    <i className="fa-solid fa-close"></i>
+                  </button>
 
+                  <h6 className="text-danger fw-bold ps-3 mt-2">Active</h6>
+
+                  <div className="ps-3">
+                    <label>Upline ID</label>
                     <input
                       name="parentId"
-                      placeholder="Upline ID"
-                      className="form-control"
                       onChange={addParent.handleChange}
+                      className="form-control"
+                      
                     />
-
+                    <div className="text-main text-center mt-2" style={{textAlign:"center", backgroundColor:"#2cb905d0" , fontSize:"1.5rem", fontWeight:"bold"}}>
+                      {nameOfParent}
+                    </div>
                     <button
                       type="button"
-                      className="btn bg-grdient mt-2"
                       onClick={checkParent}
+                      className="btn bg-grdient mt-2"
                     >
                       Search
                     </button>
+                  </div>
 
-                    {nameOfParent && (
-                      <div className="fw-bold text-center mt-2">
-                        {nameOfParent}
-                      </div>
-                    )}
-
-                    <div className="mt-3">
+                  <div className="ps-3 mt-3">
+                    <label>Choose Hand Side</label>
+                    <div>
                       <button
                         type="button"
                         disabled={left}
                         onClick={() => handelSide("Left")}
                       >
-                        Left
+                        ◀
                       </button>
-
+                      <span className="mx-2">{handSide}</span>
                       <button
                         type="button"
                         disabled={right}
                         onClick={() => handelSide("Right")}
                       >
-                        Right
+                        ▶
                       </button>
                     </div>
+                  </div>
 
-                    <button
-                      type="submit"
-                      disabled={left && right}
-                      className="btn bg-grdient mt-3"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                )}
-              </div>
-            )
+                  <button
+                    disabled={left && right}
+                    type="submit"
+                    className="btn bg-grdient d-block m-auto mt-3"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          ) : null
         )}
       </div>
     </section>

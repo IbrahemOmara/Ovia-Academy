@@ -1,63 +1,72 @@
 import { useFormik } from "formik";
-import React, { useContext } from "react";
-import { baseURL } from "../../../utils/baseURL";
+import React from "react";
 import axios from "axios";
-import { StoreContext } from "../../../context/storeContext";
+import { baseURL } from "../../../utils/baseURL";
 import { toast } from "react-toastify";
 
-export default function EditeUserImge({ userId,refetchDataUser }) {
-
-  const addUserImg = async (values, id) => {
+export default function EditeUserImge({ userId, refetchDataUser }) {
+  const addUserImg = async (values) => {
     try {
       const formData = new FormData();
-      formData.append("file", values.file);
-      const data = await axios.post(
-        `${baseURL}/User/AddUserImg?userId=${id}`,
-        formData
+
+      // ⚠️ لازم الاسم يكون image زي Swagger
+      formData.append("image", values.image);
+
+      await axios.post(
+        `${baseURL}/BunnyImages/UploadImage?customerId=${userId}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
-      // console.log(data);
+
+      toast.success("Image uploaded successfully");
+
+      // تحديث بيانات المستخدم
       refetchDataUser();
-      toast.success("Image Added Successfully");
-    } catch (err) {
-      console.log(err);
-      toast.error("You have problem");
+
+      // 🔁 ريفريش الصفحة عشان الهيدر يتحدث
+      setTimeout(() => {
+        window.location.reload();
+      }, 800);
+
+    } catch (error) {
+      console.error(error);
+      toast.error("Image upload failed");
     }
   };
 
-  const imgUser = useFormik({
+  const formik = useFormik({
     initialValues: {
-      file: "",
+      image: null,
     },
-    onSubmit: (values) => {
-      // console.log(values.file);
-      addUserImg(values, userId);
-    },
+    onSubmit: addUserImg,
   });
 
-  const handleImage = (event) => {
-    if (event.currentTarget.files) {
-      imgUser.setFieldValue("file", event.currentTarget.files[0]);
+  const handleImageChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      formik.setFieldValue("image", e.target.files[0]);
+      formik.submitForm();
     }
-    // console.log(event.currentTarget.files);
-    imgUser.submitForm();
   };
 
   return (
-    <>
-      <div className="control-img-profile position-relative overflow-hidden">
-        <button className="rounded-circle bg-main-color text-main border-0">
-          <i className="fa-solid fa-camera"></i>
-        </button>
-        <div className="position-absolute top-0 opacity-0">
-          <input
-            onChange={handleImage}
-            type="file"
-            className="form-control-file"
-            name="file"
-            id="file"
-          />
-        </div>
-      </div>
-    </>
+    <div className="control-img-profile position-relative overflow-hidden">
+      <button
+        type="button"
+        className="rounded-circle bg-main-color text-main border-0"
+      >
+        <i className="fa-solid fa-camera"></i>
+      </button>
+
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        className="position-absolute top-0 start-0 w-100 h-100 opacity-0"
+      />
+    </div>
   );
 }

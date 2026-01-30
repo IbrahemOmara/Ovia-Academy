@@ -66,7 +66,7 @@ export default function AreaCards2() {
         </div>
         <div className="col-md-6 col-lg-4">
           <AreaCard
-            colors={["#e4e8ef", "#23211a"]}
+            colors={["#e4e8ef", "#f9da6c"]}
             percentFillValue={(cvs?.data.rightCv / totalBVRight?.data) * 100 || 0}
             cardInfo={{
               title: "Right CVs",
